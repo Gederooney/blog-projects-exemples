@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toggle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./highlight/styles/atom-one-dark.min.css" />
+    <script src="./highlight/highlight.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          darkMode: "class",
+          extend: {
+            container: {
+              center: true,
+              padding: "1rem"
+            },
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+              synonym: ["Synonym", "sans-serif"]
+            },
+            colors: {
+              darkBlue: "#032957",
+              orange: "#FF6141"
+            },
+            backgroundImage: {
+              hero: "radial-gradient(100% 100% at 50% 0%, #000409 0%, rgba(1, 8, 17, 0.00) 100%);"
+            }
+          }
+        }
+      };
+    </script>
+    <script type="text/javascript">
+      hljs.highlightAll();
+    </script>
+    <style>
+      @font-face {
+        font-family: "chillax";
+        font-display: swap;
+        src: url("./fonts/chillax/Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "synonym";
+        font-display: swap;
+        src: url("./fonts/synonym/Synonym-Regular.ttf");
+        font-weight: 100 900;
+      }
+      body {
+        scroll-behavior: smooth;
+      }
+      html {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+      .text-edge-outline {
+        /* -webkit-text-stroke: 2px hsla(0, 0%, 100%, 0.3); */
+        -webkit-text-stroke: 2px hsla(10, 100%, 70%, 0.7);
+      }
+      .text-shadow {
+        text-shadow: 0 2px 40px hsla(0, 0%, 0%, 0.5);
+      }
+      .clip-left {
+        clip-path: polygon(50% 0, 50% 100%, 0 100%, 0 0);
+      }
+      .clip-right {
+        clip-path: polygon(100% 0, 100% 100%, 50% 100%, 50% 0);
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .cubic {
+        transition: all 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      }
+      .slider,
+      .slider:before {
+        transition: all 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      }
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        gap: 1rem;
+      }
+      ul li a {
+        position: relative;
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        color: rgba(241, 180, 187, 0.5);
+        transition: color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.05rem;
+      }
+      ul li a:hover {
+        color: rgba(241, 180, 187, 1);
+      }
+      li a::before {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #f1b4bb;
+        clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        transition: clip-path 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      }
+      li a::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #f1b4bb;
+        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translateY(100%);
+        transition: clip-path 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      }
+      li a:hover::after,
+      li a:hover::before {
+        clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%);
+      }
+      code {
+        background: black !important;
+        padding: 1rem !important;
+        font-size: 0.75rem !important;
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center w-screen h-screen">
+    <div class="w-[540px] h-[960px] overflow-hidden mx-auto bg-[#FDF0F0]">
+      <div
+        class="w-full h-[300px] shadow-lg drop-shadow-lg bg-[#1F4172] flex flex-col items-center justify-center gap-4"
+      >
+        <h1 class="text-4xl font-bold uppercase text-center text-white">
+          <span class="block"> Animation-CSS </span>
+          <span class="block"> NAV - clip-path </span>
+        </h1>
+        <div class="flex gap-2 relative items-center">
+          <ul class="font-synonym text-sm text-[#f1b4bb]">
+            <li><a href=""> Accueil </a></li>
+            <li><a href=""> Contact </a></li>
+            <li><a href=""> Blog </a></li>
+            <li><a href=""> A propos </a></li>
+          </ul>
+        </div>
+        <p class="text-white text-base">
+          Code complet: https://blog.gederooney.me
+        </p>
+      </div>
+      <div class="flex gap-1">
+        <pre>
+<code class="language-html">
+&lt;ul class=""&gt;
+  &lt;li class=""&gt;
+   &lt;a href="/" class=""&gt;
+    Accueil 
+   &lt;/a&gt;
+  &lt;/li&gt;
+  ...
+&lt;/ul&gt;
+</code>
+</pre>
+        <pre>
+<code class="language-css">
+ul {
+  display: flex;
+  gap: 1rem;
+}
+li a{
+  display: inline-block;
+  position: relative;
+}
+li a::before,
+li a::after{
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #f1b4bb;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: clip-path 0.2s 
+    cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+li a::before {
+  clip-path: polygon(100% 0%, 100% 0%, 
+	100% 100%, 100% 100%);
+  transform: translateY(-100%);
+}
+li a::after {
+  clip-path: polygon(0% 0%, 0% 0%, 
+	0% 100%, 0% 100%);
+  transform: translateY(100%);
+}
+li a:hover::after,
+li a:hover::before {
+  clip-path: polygon(100% 0%, 0% 0%, 0% 
+	100%, 100% 100%);
+}
+</code>
+</pre>
+      </div>
+    </div>
+    <script>
+      const input = document.querySelector('input[type="checkbox"]');
+      input.addEventListener("change", e => {
+        if (e.target.checked) {
+          document.body.classList.add("dark");
+        } else {
+          document.body.classList.remove("dark");
+        }
+      });
+    </script>
+  </body>
+</html>

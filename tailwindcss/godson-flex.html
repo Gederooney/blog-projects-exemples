@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      
+      form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+      }
+      .input-group {
+        position: relative;
+      }
+      .input-group input {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-image: none;
+        width: 135px;
+        font-size: 16px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        color: #333;
+        height: 46px;
+      }
+      .input-group span {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        color: red;
+      }
+      .form-btn button {
+        background-color: #7d5ca3;
+        border-color: #7d5ca3;
+        color: #fff;
+        padding: 0 1.75rem;
+        width: 170px;
+        font-size: 0.9rem;
+        height: 3.3rem;
+        border-radius: 0.25rem;
+        appearance: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+        outline: none;
+        margin: 0 !important;
+      }
+      .input-group input:focus,
+      .form-btn button:hover {
+        background-color: white;
+        color: #7d5ca3;
+        border-color: #7d5ca3;
+        outline: none;
+      }
+
+      @media only screen and (max-width: 600px) {
+        form,
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 0.5rem;
+        }
+        .form-btn {
+          margin-top: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div class="form-group">
+        <label for=""> Label </label>
+        <div class="input-group">
+          <input required name="" type="text" />
+          <span>
+            Ceci est un long message d'erreur et je veux qu'il soit sur
+            plusieurs lignes
+          </span>
+        </div>
+      </div>
+      <div class="form-btn">
+        <button type="submite">Envoyer</button>
+      </div>
+    </form>
+    tegtsrs
+  </body>
+</html>

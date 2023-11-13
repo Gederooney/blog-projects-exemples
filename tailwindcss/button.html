@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clip Path</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./highlight/styles/atom-one-dark.min.css" />
+    <script src="./highlight/highlight.min.js"></script>
+    <script type="text/javascript">
+      hljs.highlightAll();
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+		  theme: {
+			extend: {
+			  colors: {
+				darkBlue: "#032957",
+				orange: "#FF6141"
+			  },
+			},
+		  },
+		};
+	  </script>
+    <style>
+      html {
+        overflow: hidden;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* For IE, Edge and Firefox */
+      .scrollbar-hide {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .clipPath {
+        height: 100%;
+        width: 100%;
+        background-color: rgb(2 6 23);
+        clip-path: circle(10% at 50% 0%);
+        top: 0%;
+        left: 0%;
+        transition: all .5s cubic-bezier(0.29, .5, 0.9, 1);
+		
+      }
+      .card:hover .clipPath {
+        clip-path: circle(100%);
+		background-color: rgb(226 232 240);
+      }
+	  .shadowCard{
+		
+	  }
+	  .cSahdow1 {
+        box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+      }
+      .cSahdow2 {
+        box-shadow: -4px -8px 8px 5px rgba(0, 0, 0, 0.2),
+          4px 8px 8px 5px rgba(0, 0, 0, 0.2);
+      }
+      .text-edge-outline {
+        -webkit-text-stroke: 2px rgb(148 163 184);
+      }
+	  button{
+		mix-blend-mode: hard-light;
+		-webkit-blend-mode: hard-light;
+		z-index: 0;
+		border: 2px solid transparent;
+		box-shadow: 2px 2px 15px 5px rgba(0,0,0,0.3);
+		background-color: transparent !important;
+	}
+	button::before{}
+
+	button:hover::before{
+		content: "";
+		position: absolute;
+		top:-25%;
+		left: 0;
+		width: 100%;
+		height: 150%;
+		background-color: transparent !important;
+		background: linear-gradient(217deg, rgba(221, 34, 96, 0.8), rgba(255,0,0,0) 70.71%),
+		linear-gradient(127deg, rgba(0, 238, 255, 0.8), rgba(0, 221, 255, 0) 70.71%),
+		linear-gradient(336deg, rgba(28, 62, 104, .8), rgba(0, 221, 255, 0) 70.71%); 
+		z-index: -1;
+		filter: blur(40px) brightness(1.5);
+		-webkit-filter: blur(40px) brightness(1.5); 
+		animation: gradient 5s cubic-bezier(0.29, .5, 0.9, 1) infinite !important;
+		-webkit-animation: gradient 5s cubic-bezier(0.29, .5, 0.9, 1) infinite !important;
+	  }
+
+	  @-webkit-keyframes gradient{
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	  }
+	  @keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+	
+      code {
+        position: relative !important;
+        background: black !important;
+        padding: 0.5rem !important;
+        font-size: 0.75rem !important;
+      }
+	  body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="h-screen w-screen overflow-scroll flex items-center">
+    <div class="w-[540px] h-[960px] bg-[#011023] mx-auto p-2">
+      <div
+        class="flex h-[400px]  flex justify-center items-center flex-col gap-8 cSahdow1 bg-gradient-to-br from-[#032957] to-[#011023]"
+      >
+        
+        <div class="w-full flex gap-8 justify-center">
+          <button class="w-[300px] h-[60px] shadowCard font-bold text-[#ffefec] relative rounded-md">
+			Hover me
+		  </button>
+        </div>
+      </div>
+      <div class="flex gap-2 justify-center">
+        <pre class="max-w-[300px] relative">
+			<div class="absolute top-[50px] left-0 z-50 p-1.5 flex gap-2">
+				<span class="w-2 h-2 block rounded-full bg-red-700"></span>
+				<span class="w-2 h-2 block rounded-full bg-yellow-700"></span>
+				<span class="w-2 h-2 block rounded-full bg-green-700"></span>
+			</div>
+		<code class="language-xml rounded-md">
+&lt;button
+  class=""
+&gt;
+  Hover me
+&lt;/button&gt;
+		</code>
+	</pre>
+
+</pre>
+<pre class="max-w-[300px] relative">
+	<div class="absolute top-[25px] left-0 z-50 p-1.5 flex gap-2">
+		<span class="w-2 h-2 block rounded-full bg-red-700"></span>
+		<span class="w-2 h-2 block rounded-full bg-yellow-700"></span>
+		<span class="w-2 h-2 block rounded-full bg-green-700"></span>
+	</div>
+<code class="language-css rounded-md">
+button:{
+	mix-blend-mode: hard-light;
+	z-index: 0;
+	box-shadow: 2px 2px 15px 5px 
+	  rgba(0,0,0,0.3);
+	background-color: transparent;
+}
+button:hover::before{
+	content: "";
+	position: absolute;
+	top:-25%;
+	left: 0;
+	width: 100%;
+	height: 150%;
+	background: linear-gradient(217deg, 
+	rgba(221, 34, 96, 0.8), 
+	rgba(255,0,0,0) 70.71%),
+	linear-gradient(127deg, 
+	rgba(0, 238, 255, 0.8), 
+	rgba(0, 221, 255, 0) 70.71%),
+	linear-gradient(336deg, rgba(28, 62, 104, .8), 
+	rgba(0, 221, 255, 0) 70.71%); 
+	z-index: -1;
+	filter: blur(40px) brightness(1.5);
+}
+</code>
+</pre>
+      </div>
+    </div>
+  </body>
+</html>

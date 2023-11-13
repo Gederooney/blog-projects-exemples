@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./highlight/styles/atom-one-dark.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./highlight/highlight.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+            },
+            colors: {
+              dutchWhite: {
+                100: "#fff3dd",
+                200: "#fff1d7",
+                300: "#ffefd1",
+                400: "#ffedcc",
+                300: "#ffebc6",
+                600: "#e6d4b2",
+                700: "#ccbc9e",
+                800: "#b3a58b",
+                900: "#998d77",
+              },
+              selectiveYellow: "#ffb100",
+              amaranthanPink: "#f194b4",
+              caribbeanCurrent: "#006C67",
+              midnightGreen: "#003844",
+            },
+          },
+        },
+      };
+    </script>
+
+    <script type="text/javascript">
+      hljs.highlightAll();
+    </script>
+    <style>
+      @font-face {
+        font-family: "chillax";
+        src: url("./Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+
+      .boxShadow {
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      html {
+        overflow: hidden;
+      }
+
+      code {
+        position: relative !important;
+        background: black !important;
+        padding: 0.5rem !important;
+        font-size: 0.75rem !important;
+      }
+      input:focus + label,
+      input:not(:placeholder-shown) + label {
+        top: 0;
+        transform: translateY(-50%);
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-tl from-gray-950 to-gray-600 h-screen w-screen overflow-scroll"
+  >
+    <div class="min-h-full pt-16 flex flex-col">
+      <div class="flex justify-center items-center gap-6">
+        <button
+          class="text-gray-50 rounded-full w-8 h-8 flex items-center justify-center p-2 border border-gray-50 hover:bg-gray-50 hover:text-gray-950 transition-all duration-500 ease-in-out"
+          id="prev"
+        >
+          <svg
+            class="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              d="M5 1 1 5l4 4"
+            />
+          </svg>
+        </button>
+        <div
+          class="max-w-screen-sm grid grid-cols-2 border border-gray-400/10 rounded-md overflow-hidden bg-gradient-to-br from-gray-950 to-gray-600 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
+        >
+          <div
+            class="h-56 w-48 group top-0 left-0 relative overflow-hidden"
+            id="left"
+          >
+            <div
+              class="group active absolute top-0 left-0 w-full h-full bg-none"
+            >
+              <img
+                class="w-full h-full object-cover aspect-video object-center opacity-0 group-[.active]:opacity-100 group-[.active]:translate-y-0 transition-all duration-500 ease-in-out translate-y-full"
+                src="https://images.pexels.com/photos/1409968/pexels-photo-1409968.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt=""
+              />
+            </div>
+            <div class="group absolute top-0 left-0 w-full h-full bg-none">
+              <div
+                class="absolute top-0 left-0 w-full translate-y-full h-full z-10 bg-none group-[.active]:translate-y-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] opacity-0 group-[.active]:opacity-100"
+              >
+                <h2 class="text-gray-50 mb-4">Vintage Car</h2>
+                <span
+                  class="text-xs font-light text-gray-300 mb-4 text-center px-2 inline-block mx-auto"
+                >
+                  Lorem Ipsum sim dolor Lorem Ipsum sim
+                </span>
+                <ul class="flex justify-center items-center gap-2">
+                  <li>
+                    <a
+                      href=""
+                      class="inline-block text-gray-300 p-2 rounded-full border border-gray-400/10"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 8 19"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="inline-block text-gray-300 p-2 rounded-full border border-gray-400/10"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 14"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M19.7 3.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.84c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.84A4.225 4.225 0 0 0 .3 3.038a30.148 30.148 0 0 0-.2 3.206v1.5c.01 1.071.076 2.142.2 3.206.094.712.363 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.15 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965c.124-1.064.19-2.135.2-3.206V6.243a30.672 30.672 0 0 0-.202-3.206ZM8.008 9.59V3.97l5.4 2.819-5.4 2.8Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="inline-block text-gray-300 p-2 rounded-full border border-gray-400/10"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 15 15"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+                          clip-rule="evenodd"
+                        />
+                        <path d="M3 5.012H0V15h3V5.012Z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="group absolute top-0 left-0 w-full h-full bg-none">
+              <img
+                class="w-full h-full object-cover aspect-video object-center group-[.active]:translate-y-0 transition-all duration-500 ease-in-out translate-y-full opacity-0 group-[.active]:opacity-100"
+                src="https://images.pexels.com/photos/1409966/pexels-photo-1409966.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div
+            class="h-56 w-48 group top-0 left-0 relative overflow-hidden"
+            id="right"
+          >
+            <div
+              class="group active absolute top-0 left-0 w-full h-full bg-none"
+            >
+              <div
+                class="absolute top-0 left-0 w-full -translate-y-full h-full z-10 bg-none group-[.active]:translate-y-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] opacity-0 group-[.active]:opacity-100"
+              >
+                <h2 class="text-gray-50 mb-4">Vintage Car</h2>
+                <span
+                  class="text-xs font-light text-gray-300 mb-4 text-center px-2 inline-block mx-auto"
+                >
+                  Lorem Ipsum sim dolor Lorem Ipsum sim
+                </span>
+                <ul class="flex justify-center items-center gap-2">
+                  <li>
+                    <a
+                      href=""
+                      class="inline-block text-gray-300 p-2 rounded-full border border-gray-400/10"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 8 19"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="inline-block text-gray-300 p-2 rounded-full border border-gray-400/10"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 14"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M19.7 3.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.84c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.84A4.225 4.225 0 0 0 .3 3.038a30.148 30.148 0 0 0-.2 3.206v1.5c.01 1.071.076 2.142.2 3.206.094.712.363 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.15 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965c.124-1.064.19-2.135.2-3.206V6.243a30.672 30.672 0 0 0-.202-3.206ZM8.008 9.59V3.97l5.4 2.819-5.4 2.8Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="inline-block text-gray-300 p-2 rounded-full border border-gray-400/10"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 15 15"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+                          clip-rule="evenodd"
+                        />
+                        <path d="M3 5.012H0V15h3V5.012Z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="group absolute top-0 left-0 w-full h-full bg-none">
+              <img
+                class="w-full h-full object-cover aspect-video object-center group-[.active]:translate-y-0 transition-all duration-500 ease-in-out -translate-y-full opacity-0 group-[.active]:opacity-100 grayscale"
+                src="https://images.pexels.com/photos/416929/pexels-photo-416929.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt=""
+              />
+            </div>
+            <div class="group absolute top-0 left-0 w-full h-full bg-none">
+              <div
+                class="absolute top-0 left-0 w-full -translate-y-full h-full z-10 bg-none group-[.active]:translate-y-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] opacity-0 group-[.active]:opacity-100"
+              >
+                <h2 class="text-gray-50 mb-4">Vintage Car</h2>
+                <span
+                  class="text-xs font-light text-gray-300 mb-4 text-center px-2 inline-block mx-auto"
+                >
+                  Lorem Ipsum sim dolor Lorem Ipsum sim
+                </span>
+                <ul class="flex justify-center items-center gap-2">
+                  <li>
+                    <a
+                      href=""
+                      class="inline-block text-gray-300 p-2 rounded-full border border-gray-400/10"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 8 19"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="inline-block text-gray-300 p-2 rounded-full border border-gray-400/10"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 14"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M19.7 3.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.84c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.84A4.225 4.225 0 0 0 .3 3.038a30.148 30.148 0 0 0-.2 3.206v1.5c.01 1.071.076 2.142.2 3.206.094.712.363 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.15 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965c.124-1.064.19-2.135.2-3.206V6.243a30.672 30.672 0 0 0-.202-3.206ZM8.008 9.59V3.97l5.4 2.819-5.4 2.8Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="inline-block text-gray-300 p-2 rounded-full border border-gray-400/10"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 15 15"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+                          clip-rule="evenodd"
+                        />
+                        <path d="M3 5.012H0V15h3V5.012Z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="text-gray-50 rounded-full w-8 h-8 flex items-center justify-center p-2 border border-gray-50 hover:bg-gray-50 hover:text-gray-950 transition-all duration-500 ease-in-out"
+          id="prev"
+        >
+          <svg
+            class="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex flex-row justify-center items-center gap-6 -mt-0">
+        <pre class="max-w-[300px] relative">
+	<div class="absolute top-[30px] left-0 z-50 p-1.5 flex gap-2">
+		<span class="w-2 h-2 block rounded-full bg-red-700"></span>
+		<span class="w-2 h-2 block rounded-full bg-yellow-700"></span>
+		<span class="w-2 h-2 block rounded-full bg-green-700"></span>
+	</div>
+<code class="language-xml rounded-md">
+&lt;div&gt;
+	&lt;div class="box"&gt;
+		&lt;div class="child1"&gt;
+			&lt;img/&gt;
+		&lt;/div&gt;
+		&lt;div class="child2"&gt;
+			&lt;span&gt;Vintage&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="box"&gt;
+		&lt;div class="child1"&gt;
+			&lt;img/&gt;
+		&lt;/div&gt;
+		&lt;div class="child2"&gt;
+			&lt;span&gt;Vintage&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+        <pre class="max-w-[300px] relative">
+<div class="absolute top-[30px] left-0 z-50 p-1.5 flex gap-2">
+	<span class="w-2 h-2 block rounded-full bg-red-700"></span>
+	<span class="w-2 h-2 block rounded-full bg-yellow-700"></span>
+	<span class="w-2 h-2 block rounded-full bg-green-700"></span>
+</div>
+<code class="language-css rounded-md">
+.box {
+  position: relative;
+  overflow: hidden;
+}
+.child1 {
+  position: relative;
+  transform: translateY(0);
+}
+.child2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+.box.active child1{
+	transform: translateY(-100%);
+}
+.box.active child2{
+	transform: translateY(0);
+}
+		</code>
+	</pre>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      let current = 0;
+      const leftEls = document.querySelectorAll("#left .group");
+      const rightEls = document.querySelectorAll("#right .group");
+
+      document.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          leftEls.forEach((el, i) => {
+            el.classList.remove("active");
+            rightEls[i].classList.remove("active");
+          });
+          if (btn.id === "prev") {
+            current = --current < 0 ? leftEls.length - 1 : current;
+            leftEls[current % leftEls.length].classList.add("active");
+            rightEls[current % rightEls.length].classList.add("active");
+          } else {
+            leftEls[++current % leftEls.length].classList.add("active");
+            rightEls[current % rightEls.length].classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

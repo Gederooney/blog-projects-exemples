@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* For IE, Edge and Firefox */
+      .scrollbar-hide {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen w-screen overflow-hidden flex items-center justify-center px-8 bg-zinc-900"
+  >
+    <div
+      class="flex nowrap gap-32 w-full py-6 px-4 overflow-x-scroll scrollbar-hide scroll-smooth"
+    >
+      <div
+        class="relative basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-700/5 overflow-hidden shadow-[rgba(55,_65,_81,_0.2)_0px_9px_20px] group"
+      >
+        <img
+          src="https://images.pexels.com/photos/4006506/pexels-photo-4006506.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+          alt=""
+          class="relative z-0 aspect-9/16 grayscale h-full w-full object-cover object-top group-hover:translate-x-full transition-all duration-20 ease-in-out opacity-100 group-hover:opacity-0 blur-none group-hover:blur-lg"
+        />
+      </div>
+      <div
+        class="basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+      >
+        <img
+          src="https://images.pexels.com/photos/4654181/pexels-photo-4654181.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+          alt=""
+          class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+        />
+      </div>
+      <div
+        class="basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+      >
+        <img
+          src="https://images.pexels.com/photos/1396538/pexels-photo-1396538.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt=""
+          class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+        />
+      </div>
+      <div
+        class="basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+      >
+        <img
+          src="https://images.pexels.com/photos/14447602/pexels-photo-14447602.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt=""
+          class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+        />
+      </div>
+      <div
+        class="basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+      >
+        <img
+          src="https://images.pexels.com/photos/1970935/pexels-photo-1970935.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+          alt=""
+          class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+        />
+      </div>
+      <div
+        class="basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+      >
+        <img
+          src="https://images.pexels.com/photos/1126663/pexels-photo-1126663.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+          alt=""
+          class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+        />
+      </div>
+      <div
+        class="basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+      >
+        <img
+          src="https://images.pexels.com/photos/2893343/pexels-photo-2893343.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+          alt=""
+          class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+        />
+      </div>
+      <div
+        class="basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+      >
+        <img
+          src="https://images.pexels.com/photos/4006511/pexels-photo-4006511.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+          alt=""
+          class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+        />
+      </div>
+      <div
+        class="basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+      >
+        <img
+          src="https://images.pexels.com/photos/3534957/pexels-photo-3534957.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+          alt=""
+          class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+        />
+      </div>
+      <div
+        class="basis-[350px] h-[500px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+      >
+        <img
+          src="https://images.pexels.com/photos/1441151/pexels-photo-1441151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt=""
+          class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+        />
+      </div>
+    </div>
+  </body>
+</html>

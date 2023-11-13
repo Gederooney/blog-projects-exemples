@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liens utils - Gederooney</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          darkMode: "class",
+          extend: {
+            container: {
+              center: true,
+              padding: "1rem"
+            },
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+              synonym: ["Synonym", "sans-serif"]
+            },
+            colors: {
+              darkBlue: "#032957",
+              orange: "#FF6141"
+            },
+            backgroundImage: {
+              hero: "radial-gradient(100% 100% at 50% 0%, #000409 0%, rgba(1, 8, 17, 0.00) 100%);"
+            }
+          }
+        }
+      };
+    </script>
+
+    <style>
+      @font-face {
+        font-family: "chillax";
+        font-display: swap;
+        src: url("./fonts/chillax/Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "synonym";
+        font-display: swap;
+        src: url("./fonts/synonym/Synonym-Regular.ttf");
+        font-weight: 100 900;
+      }
+      .scrollbar-hide {
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+        width: 0;
+      }
+      .c-shadow {
+        box-shadow: 1px 1px 10px 0px #021934, inset 4px 4px 5px 0px #000409,
+          inset -4px -4px 5px 0px #000409;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-b from-[#000409] to-[#010c1a] text-[#e6eaee]">
+    <div class="max-w-2xl mx-auto">
+      <div class="container">
+        <div
+          class="mx-auto max-w-[475px] h-screen overflow-scroll scrollbar-hide py-8"
+        >
+          <div class="h-full w-full">
+            <div class="flex flex-col gap-4 justify-start items-center">
+              <div class="flex items-center justify-center flex-col">
+                <div
+                  class="h-24 w-24 bg-[#e6eaee] rounded-full overflow-hidden"
+                >
+                  <img
+                    src="./cartoon.png"
+                    alt=""
+                    class="h-full w-full object-cover object-center"
+                  />
+                </div>
+                <h1 class="text-current font-sans">@gederooney</h1>
+                <p
+                  class="text-current w-2/3 text-center text-sm font-thin my-2 line-clamp-3"
+                >
+                  Développeur web fullstack. J'écris des articles sur mon blog
+                  et je fais des vidéos sur tiktok.
+                </p>
+              </div>
+              <div class="w-full my-8">
+                <div class="container mb-2">
+                  <h3
+                    class="text-current font-synonym text-xl w-2/3 font-light"
+                  >
+                    Trouvez moi sur vos réseaux sociaux préférés.
+                  </h3>
+                </div>
+                <div class="w-full grid grid-cols-5">
+                  <div class="flex justify-center p-1.5">
+                    <a
+                      target="_blank"
+                      href="https://www.tiktok.com/@gedeon_rony"
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/gedeon_rony/"
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+                        ></path>
+                        <path
+                          d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"
+                        ></path>
+                        <path d="M16.5 7.5l0 .01"></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/ronystv"
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-gray-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <a
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                      target="_blank"
+                      href="https://x.com/gedeon_rony"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                        <path
+                          d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <a
+                      target="_blank"
+                      href="https://www.youtube.com/@gedeon_rony"
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"
+                        ></path>
+                        <path d="M10 9l5 3l-5 3z"></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/ronygedeon/"
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+                        ></path>
+                        <path d="M8 11l0 5"></path>
+                        <path d="M8 8l0 .01"></path>
+                        <path d="M12 16l0 -5"></path>
+                        <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <a
+                      target="_blank"
+                      href="https://github.com/Gederooney"
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"
+                        ></path>
+                        <path d="M10 9l5 3l-5 3z"></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <div
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2 -1.857l.867 -12.143h-16z"
+                        ></path>
+                        <path
+                          d="M8.5 7c0 -1.653 1.5 -4 3.5 -4s3.5 2.347 3.5 4"
+                        ></path>
+                        <path
+                          d="M9.5 17c.413 .462 1 1 2.5 1s2.5 -.897 2.5 -2s-1 -1.5 -2.5 -2s-2 -1.47 -2 -2c0 -1.104 1 -2 2 -2s1.5 0 2.5 1"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <div
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <div
+                      class="bg-[#011023] h-16 w-16 p-4 rounded-md border border-[#e6eaee]/5 text-current c-shadow"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-full w-full text-current"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4"
+                        ></path>
+                        <path d="M11.5 3a16.989 16.989 0 0 0 -1.826 4"></path>
+                        <path d="M12.5 3a16.989 16.989 0 0 1 1.828 4"></path>
+                        <path
+                          d="M19.5 17a9 9 0 0 1 -7.5 4a8.991 8.991 0 0 1 -7.484 -4"
+                        ></path>
+                        <path d="M11.5 21a16.989 16.989 0 0 1 -1.826 -4"></path>
+                        <path d="M12.5 21a16.989 16.989 0 0 0 1.828 -4"></path>
+                        <path d="M2 10l1 4l1.5 -4l1.5 4l1 -4"></path>
+                        <path d="M17 10l1 4l1.5 -4l1.5 4l1 -4"></path>
+                        <path d="M9.5 10l1 4l1.5 -4l1.5 4l1 -4"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full">
+                <div class="container mb-2">
+                  <h3
+                    class="text-current font-synonym text-xl w-2/3 font-normal"
+                  >
+                    Liens utiles
+                  </h3>
+                </div>
+                <div class="flex flex-col gap-1.5 w-full">
+                  <a
+                    href="https://blog.gederooney.me"
+                    target="_blank"
+                    class="text-center block w-full py-2 border border-[#e6eaee]/5 rounded-md font-synonym font-light"
+                  >
+                    Blog
+                  </a>
+                  <a
+                    href="https://shop.gederooney.me"
+                    target="_blank"
+                    class="text-center block w-full py-2 border border-[#e6eaee]/5 rounded-md font-synonym font-light"
+                  >
+                    Boutique
+                  </a>
+                  <a
+                    href="https://gederooney.me"
+                    target="_blank"
+                    class="text-center block w-full py-2 border border-[#e6eaee]/5 rounded-md font-synonym font-light"
+                  >
+                    Portfolio
+                  </a>
+                </div>
+              </div>
+              <div class="w-full">
+                <div class="container mb-2">
+                  <h3
+                    class="text-current font-synonym text-xl w-2/3 font-normal"
+                  >
+                    Vidéos récentes sur TikTok
+                  </h3>
+                </div>
+                <div
+                  class="flex flex-row flex-nowrap gap-1 w-full overflow-scroll scrollbar-hide"
+                >
+                  <div class="flex justify-center p-1.5">
+                    <div
+                      class="bg-[#e6eaee] h-64 w-36 rounded-md overflow-hidden"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1698742324562-1c2ed86eb1f6?auto=format&fit=crop&q=80&w=2576&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                        class="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="flex justify-center p-1.5">
+                    <div
+                      class="bg-[#e6eaee] h-64 w-36 rounded-md overflow-hidden"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1698256729051-25bd33cca02e?auto=format&fit=crop&q=80&w=2574&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                        class="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <div
+                      class="bg-[#e6eaee] h-64 w-36 rounded-md overflow-hidden"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1682685797439-a05dd915cee9?auto=format&fit=crop&q=80&w=2574&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                        class="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex justify-center p-1.5">
+                    <div
+                      class="bg-[#e6eaee] h-64 w-36 rounded-md overflow-hidden"
+                    >
+                      <img
+                        src="https://images.pexels.com/photos/10390684/pexels-photo-10390684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt=""
+                        class="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full">
+                <div class="container mb-2">
+                  <h3
+                    class="text-current font-synonym text-xl w-2/3 font-normal"
+                  >
+                    Articles récents
+                  </h3>
+                </div>
+                <div
+                  class="flex flex-row flex-nowrap gap-2 w-full overflow-scroll scrollbar-hide items-start"
+                >
+                  <a
+                    href="https://blog.gederooney.me/blog/maitrisez-les-tableaux-en-javaScript-un-guide-complet-pour-debutants"
+                    target="_blank"
+                    class="flex flex-col justify-center p-1.5"
+                  >
+                    <div
+                      class="bg-[#e6eaee] h-36 w-64 rounded-md overflow-hidden"
+                    >
+                      <img
+                        src="https://blog.gederooney.me/static/images/1x/tableaux_en_js.webp"
+                        alt=""
+                        class="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <p
+                      class="text-current font-sans font-normal text-sm justify-self-start w-[80%]"
+                    >
+                      Apprenez les tableaux en JavaScript
+                    </p>
+                  </a>
+                  <a
+                    class="flex flex-col justify-center p-1.5"
+                    href="https://blog.gederooney.me/blog/les-bases-de-la-programations-asynchrone-en-javascript-nodejs"
+                    target="_blank"
+                  >
+                    <div
+                      class="bg-[#e6eaee] h-36 w-64 rounded-md overflow-hidden"
+                    >
+                      <img
+                        src="https://blog.gederooney.me/static/images/1x/javascript_runtime.webp"
+                        alt=""
+                        class="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <p
+                      class="text-current font-sans font-normal text-sm justify-self-start w-[80%]"
+                    >
+                      Les bases de l'asynchrone en javascript
+                    </p>
+                  </a>
+                  <a
+                    class="flex flex-col justify-center p-1.5"
+                    target="_blank"
+                    href="https://blog.gederooney.me/blog/authentifcation-google-oauth-de-zero-avec-nodejs-express"
+                  >
+                    <div
+                      class="bg-[#e6eaee] h-36 w-64 rounded-md overflow-hidden"
+                    >
+                      <img
+                        src="https://blog.gederooney.me/static/images/posters/ouath2_illustration.webp"
+                        alt=""
+                        class="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <p
+                      class="text-current font-sans font-normal text-sm justify-self-start w-[90%]"
+                    >
+                      Implementez une authentification Oauth en node.js/express
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="text-current py-4 text-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="150"
+                class="stroke-current fill-current mx-auto"
+                viewBox="0 0 400 100"
+              >
+                <defs>
+                  <style>
+                    .logo_svg__cls-1 {
+                      stroke-miterlimit: 10;
+                      stroke-width: 8px;
+                      fill: none;
+                    }
+                    .logo_svg__cls-6 {
+                      letter-spacing: -0.05em;
+                    }
+                  </style>
+                </defs>
+                <path
+                  id="logo_svg__Calque_2"
+                  d="M0 0h500v100H0z"
+                  data-name="Calque 2"
+                  style="stroke-width: 0; fill: none"
+                ></path>
+                <g id="logo_svg__Calque_1" data-name="Calque 1">
+                  <path
+                    d="M48.71 32.5c8.26-2.72 13.86 6.23 14.61 13.35M24.5 52.22c-4.59-1.8-9.35-4.08-12.68-7.83-1.66-1.87-3.29-4.41-2.84-7.02.49-2.81 3.24-4.51 5.64-5.59 11.75-5.26 24.91 1.21 34.38 8.37 4.44 3.36 8.15 7.69 10.46 12.79 2.48 5.47 3.99 12.07 2.23 17.97-3.03 10.12-16.16 14.42-24.01 6.82-4.03-3.91-5.77-10.14-5.94-15.61-.18-5.93 1.67-11.97 4.5-17.14.71-1.31 1.51-2.57 2.37-3.79"
+                    class="logo_svg__cls-1"
+                  ></path>
+                  <text
+                    style="
+                      font-family: var(--font-chillax);
+                      font-size: 52.5px;
+                      font-weight: 700;
+                    "
+                    transform="translate(71.31 76.72)"
+                  >
+                    <tspan x="0" y="0" class="logo_svg__cls-6">EDER</tspan>
+                    <tspan x="132.72" y="0" style="letter-spacing: -0.03em">
+                      OO
+                    </tspan>
+                    <tspan x="211.16" y="0" class="logo_svg__cls-6">N</tspan>
+                    <tspan x="250.01" y="0" style="letter-spacing: -0.02em">
+                      E
+                    </tspan>
+                    <tspan x="282.19" y="0" style="letter-spacing: -0.24em">
+                      Y
+                    </tspan>
+                    <tspan x="304.77" y="0" style="letter-spacing: -0.17em">
+                      .
+                    </tspan>
+                  </text>
+                </g>
+              </svg>
+              <span class="text-xs font-thin">
+                © 2023 gederooney - Tous droits réservés
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

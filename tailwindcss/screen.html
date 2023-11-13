@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+            },
+            colors: {
+              dutchWhite: {
+                100: "#fff3dd",
+                200: "#fff1d7",
+                300: "#ffefd1",
+                400: "#ffedcc",
+                500: "#ffebc6",
+                600: "#e6d4b2",
+                700: "#ccbc9e",
+                800: "#b3a58b",
+                900: "#998d77",
+              },
+              selectiveYellow: "#ffb100",
+              amaranthanPink: "#f194b4",
+              caribbeanCurrent: "#006C67",
+              midnightGreen: "#003844",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @font-face {
+        font-family: "chillax";
+        src: url("./Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+
+      .boxShadow {
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      html {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen w-screen flex flex-col items-center py-6 gap-4 bg-gradient-to-br from-[#06141e] to-[#040d13]"
+  >
+    <h1 class="text-3xl uppercase my-8 font-sans font-bold text-gray-100">
+      Position absolute en css
+    </h1>
+    <div class="flex gap-0 w-full justify-center">
+      <div class="basis-1/4">
+        <div
+          class="h-48 w-48 mx-auto rounded-md relative overflow-hidden bg-gradient-to-br from-cyan-500 to-pink-600 border border-cyan-500"
+        >
+          <div
+            class="absolute h-16 w-16 bg-gray-950/50 transition-all duration-1000 ease backdrop-blur-2xl boxShadow"
+            id="toMove"
+            style="top: -100%; left: -100%"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <pre class="text-gray-100 block">
+<code id="parent">
+  .parent{
+    position: relative;
+  }
+</code>
+      </pre>
+      <pre class="text-gray-100 relative block -mt-16"> 
+<code data-style="top-0-right-0" class="hidden absolute top-0 left-0">
+  .enfant{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+</code>
+<code data-style="bottom-0-right-0" class="hidden absolute top-0 left-0">
+  .enfant{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+</code>
+<code data-style="left-50-top-50" class="hidden absolute top-0 left-0">
+  .enfant{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</code>
+<code data-style="top-50-left-50" class="hidden absolute top-0 left-0">
+  .enfant{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</code>
+<code data-style="bottom-0-left-0" class="hidden absolute top-0 left-0">
+  .enfant{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+</code>
+<code data-style="top-0-left-0" class="hidden absolute top-0 left-0">
+  .enfant{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</code>
+       </pre>
+    </div>
+
+    <div class="w-[200px] flex flex-col gap-4">
+      <button
+        class="inline-block bg-gray-50 rounded-md p-2 text-xs bg-gradient-to-r from-cyan-600 to-pink-600 py-1.5 px-4 border border-gray-950 shadow-md text-gray-100 font-medium"
+        data-style="top:0; right:0;"
+        data-code="top-0-right-0"
+      >
+        <span class="block"> top:0; right:0; </span>
+      </button>
+      <button
+        class="bg-gray-50 rounded-md p-2 text-xs bg-gradient-to-r from-cyan-500 to-pink-600 py-1.5 px-4 border border-gray-950 shadow-md text-gray-100 font-medium"
+        data-style="top:100%; right:0; transform: translate(0%,-100%);"
+        data-code="bottom-0-right-0"
+      >
+        <span class="block"> bottom: 0; right:0; </span>
+      </button>
+      <button
+        class="bg-gray-50 rounded-md p-2 text-xs bg-gradient-to-r from-cyan-500 to-pink-600 py-1.5 px-4 border border-gray-950 shadow-md text-gray-100 font-medium"
+        data-style="top:50%; right:50%; transform:translate(50%,-50%);"
+        data-code="top-50-left-50"
+      >
+        top: 50%; left: 50%;
+        <br />
+        translate(-50%, -50%);
+      </button>
+
+      <button
+        class="bg-gray-50 rounded-md p-2 text-xs bg-gradient-to-r from-cyan-500 to-pink-600 py-1.5 px-4 border border-gray-950 shadow-md text-gray-100 font-medium"
+        data-style="top: 100%; right: 100% ; transform: translate(100%,-100%);"
+        data-code="bottom-0-left-0"
+      >
+        <span class="block"> bottom: 0; left:0; </span>
+      </button>
+
+      <button
+        class="bg-gray-50 rounded-md p-2 text-xs bg-gradient-to-r from-cyan-500 to-pink-600 py-1.5 px-4 border border-gray-950 shadow-md text-gray-100 font-medium"
+        data-style="top:0; right:100%; transform: translate(100%,0%);"
+        data-code="top-0-left-0"
+      >
+        <span>
+          <span class="block"> top: 0; left:0; </span>
+        </span>
+      </button>
+    </div>
+  </body>
+  <script>
+    const toMove = document.getElementById("toMove");
+    const codes = document.querySelectorAll("code[data-style]");
+    document.querySelectorAll("button[data-style]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const style = btn.dataset.style;
+        toMove.style = style;
+        codes.forEach((code) => {
+          code.classList.add("hidden");
+          if (code.dataset.style === btn.dataset.code) {
+            code.classList.remove("hidden");
+          }
+        });
+      });
+    });
+  </script>
+</html>

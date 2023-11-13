@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clip Path</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./highlight/styles/atom-one-dark.min.css" />
+    <script src="./highlight/highlight.min.js"></script>
+    <script type="text/javascript">
+      hljs.highlightAll();
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+		  theme: {
+			extend: {
+			  colors: {},
+			},
+		  },
+		};
+	  </script>
+    <style>
+      html {
+        overflow: hidden;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* For IE, Edge and Firefox */
+      .scrollbar-hide {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .clipPath {
+        height: 100%;
+        width: 100%;
+        background-color: rgb(2 6 23);
+        clip-path: circle(10% at 50% 0%);
+        top: 0%;
+        left: 0%;
+        transition: all .5s cubic-bezier(0.29, .5, 0.9, 1);
+		
+      }
+      .card:hover .clipPath {
+        clip-path: circle(100%);
+		background-color: rgb(226 232 240);
+      }
+	  .cSahdow1 {
+        box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+      }
+      .cSahdow2 {
+        box-shadow: -4px -8px 8px 5px rgba(0, 0, 0, 0.2),
+          4px 8px 8px 5px rgba(0, 0, 0, 0.2);
+      }
+      .text-edge-outline {
+        -webkit-text-stroke: 2px rgb(148 163 184);
+      }
+      code {
+        position: relative !important;
+        background: black !important;
+        padding: 0.5rem !important;
+        font-size: 0.75rem !important;
+      }
+	  body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="h-screen w-screen overflow-scroll flex items-center">
+    <div class="w-[540px] h-[960px] bg-slate-800 mx-auto p-2">
+      <div
+        class="flex h-[400px]  flex justify-center items-center flex-col gap-8 cSahdow1"
+      >
+        <h1
+          class="text-5xl font-bold text-edge-outline text-transparent -mt-16 mb-8"
+        >
+          Contactez-nous
+        </h1>
+        <div class="w-full flex gap-8 justify-center">
+          <div class="h-auto w-36 cSahdow2 cursor-pointer group relative card">
+            <div
+              class="h-36 w-full bg-gradient-to-br from-slate-950 to-slate-950 flex items-center justify-center text-slate-500 relative z-10  absolute cSahdow1 group-hover:text-slate-100 flex flex-col gap-2"
+            >
+              <svg
+                class="w-12 h-12 text-current"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 20"
+              >
+                <path
+                  d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
+                />
+              </svg>
+              <div>
+                <span> Addresse </span>
+              </div>
+            </div>
+            <div
+              class="absolute h-36 card w-full top-0 left-0  z-30 clipPath translate-y-0 flex items-center justify-center text-slate-500  cSahdow1 text-xs flex-col text-center gap-2 px-2"
+            >
+              <a class="text-slate-600" href="mailto:gyebadokpo61@gmail.com">
+                rue Oregon Est, Québec, QC Canada
+              </a>
+            </div>
+          </div>
+          <div class="h-auto w-36 cSahdow2 cursor-pointer group relative card">
+            <div
+              class="h-36 w-full bg-gradient-to-br from-slate-950 to-slate-950 flex items-center justify-center text-slate-500 relative z-10  absolute cSahdow1 group-hover:text-slate-100 flex flex-col gap-2"
+            >
+              <svg
+                class="w-12 h-12 text-current"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M7.824 5.937a1 1 0 0 0 .726-.312 2.042 2.042 0 0 1 2.835-.065 1 1 0 0 0 1.388-1.441 3.994 3.994 0 0 0-5.674.13 1 1 0 0 0 .725 1.688Z"
+                />
+                <path
+                  d="M17 7A7 7 0 1 0 3 7a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1V7a5 5 0 1 1 10 0v7.083A2.92 2.92 0 0 1 12.083 17H12a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1a1.993 1.993 0 0 0 1.722-1h.361a4.92 4.92 0 0 0 4.824-4H17a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3Z"
+                />
+              </svg>
+              <div>
+                <span> Téléphone </span>
+              </div>
+            </div>
+            <div
+              class="absolute h-36 card w-full top-0 left-0  z-30 clipPath translate-y-0 flex items-center justify-center text-slate-500  cSahdow1 text-xs flex-col text-center gap-2 px-2"
+            >
+              <a class="text-slate-600" href="mailto:gyebadokpo61@gmail.com">
+                +1 888 756 00 00
+              </a>
+            </div>
+          </div>
+          <div class="h-auto w-36 cSahdow2 cursor-pointer group relative card">
+            <div
+              class="h-36 w-full bg-gradient-to-br from-slate-950 to-slate-950 flex items-center justify-center text-slate-500 relative z-10   absolute cSahdow1 group-hover:text-slate-100 flex flex-col gap-2"
+            >
+              <svg
+                class="w-12 h-12 text-current"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 16"
+              >
+                <path
+                  d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                />
+                <path
+                  d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                />
+              </svg>
+              <div>
+                <span> Courriel </span>
+              </div>
+            </div>
+            <div
+              class="absolute h-36 card w-full top-0 left-0  z-30 clipPath translate-y-0 flex items-center justify-center text-slate-500 text-xs flex-col text-center gap-2 px-2"
+            >
+              <a class="text-slate-600" href="mailto:gyebadokpo61@gmail.com">
+                email@entreprise.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-2 justify-center">
+        <pre class="max-w-[300px] relative">
+			<div class="absolute top-[50px] left-0 z-50 p-1.5 flex gap-2">
+				<span class="w-2 h-2 block rounded-full bg-red-700"></span>
+				<span class="w-2 h-2 block rounded-full bg-yellow-700"></span>
+				<span class="w-2 h-2 block rounded-full bg-green-700"></span>
+			</div>
+		<code class="language-xml rounded-md">
+&lt;div
+  class="box"
+&gt;
+  &lt;div class="child1"&gt;
+    &lt;img/&gt;
+  &lt;/div&gt;
+  &lt;div class="child2"&gt; 
+    &lt;a&gt;email@entre.com&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+		</code>
+	</pre>
+
+</pre>
+<pre class="max-w-[300px] relative">
+	<div class="absolute top-[25px] left-0 z-50 p-1.5 flex gap-2">
+		<span class="w-2 h-2 block rounded-full bg-red-700"></span>
+		<span class="w-2 h-2 block rounded-full bg-yellow-700"></span>
+		<span class="w-2 h-2 block rounded-full bg-green-700"></span>
+	</div>
+<code class="language-css rounded-md">
+.box {
+	position: relative;
+}
+.box > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 200px;
+	width: 200px;
+	transition: all .5s 
+	cubic-bezier(0.29, .5, 0.9, 1);
+}
+.child1 {
+	z-index: 1;
+}
+.child2 {
+	z-index: 2;
+	clip-path: circle(10% at 0% 0%);
+	background-color: rgb(2 6 23);
+}
+.box:hover child2{
+	clip-path: circle(100%);
+	background-color: rgb(226 232 240);
+}
+</code>
+</pre>
+      </div>
+    </div>
+  </body>
+</html>

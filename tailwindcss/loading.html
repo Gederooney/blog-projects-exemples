@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./highlight/styles/atom-one-dark.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./highlight/highlight.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+            },
+            colors: {
+              dutchWhite: {
+                100: "#fff3dd",
+                200: "#fff1d7",
+                300: "#ffefd1",
+                400: "#ffedcc",
+                500: "#ffebc6",
+                600: "#e6d4b2",
+                700: "#ccbc9e",
+                800: "#b3a58b",
+                900: "#998d77",
+              },
+              selectiveYellow: "#ffb100",
+              amaranthanPink: "#f194b4",
+              caribbeanCurrent: "#006C67",
+              midnightGreen: "#003844",
+            },
+          },
+        },
+      };
+    </script>
+
+    <script type="text/javascript">
+      hljs.highlightAll();
+    </script>
+    <style>
+      @font-face {
+        font-family: "chillax";
+        src: url("./Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+
+      .boxShadow {
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      html {
+        overflow: hidden;
+      }
+
+      code {
+        background: black !important;
+        padding: 1.5rem !important;
+        font-size: 0.75rem !important;
+      }
+      input:focus + label,
+      input:not(:placeholder-shown) + label {
+        top: 0;
+        transform: translateY(-50%);
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-black flex items-center justify-center h-screen w-screen overflow-scroll"
+  >
+    <div class="w-48 h-48 border bg-gray-50 rounded-full relative">
+      <span class="block absolute top-0 left-0 w-full h-px bg-gray-950 rounded-full"></span>
+    </div>
+  </body>
+</html>

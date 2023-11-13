@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            container: {
+              center: true,
+              padding: "1rem"
+            },
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+              synonym: ["Synonym", "sans-serif"]
+            },
+            colors: {
+              darkBlue: "#032957",
+              orange: "#FF6141"
+            },
+            backgroundImage: {
+              hero: "radial-gradient(100% 100% at 50% 0%, #000409 0%, rgba(1, 8, 17, 0.00) 100%);"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      @font-face {
+        font-family: "chillax";
+        font-display: swap;
+        src: url("./fonts/chillax/Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "synonym";
+        font-display: swap;
+        src: url("./fonts/synonym/Synonym-Regular.ttf");
+        font-weight: 100 900;
+      }
+      body {
+        scroll-behavior: smooth;
+      }
+      html {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+      .text-edge-outline {
+        /* -webkit-text-stroke: 2px hsla(0, 0%, 100%, 0.3); */
+        -webkit-text-stroke: 2px hsla(10, 100%, 70%, 0.7);
+      }
+      .text-shadow {
+        text-shadow: 0 2px 40px hsla(0, 0%, 0%, 0.5);
+      }
+      .clip-left {
+        clip-path: polygon(50% 0, 50% 100%, 0 100%, 0 0);
+      }
+      .clip-right {
+        clip-path: polygon(100% 0, 100% 100%, 50% 100%, 50% 0);
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .cubic {
+        transition: all 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      }
+    </style>
+  </head>
+  <body class="overflow-scroll w-screen h-screen">
+    <header class="w-full fixed top-0 left-0 z-50 text-gray-50">
+      <div class="max-w-screen-3xl mx-auto">
+        <div class="container">
+          <div class="w-full flex justify-between items-center">
+            <a href="/" class="section-link">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 400 100"
+                width="150"
+                class="cs-style fill-current"
+              >
+                <defs>
+                  <style>
+                    .cls-1 {
+                      stroke-miterlimit: 10;
+                      stroke-width: 10px;
+                      stroke: currentColor;
+                    }
+
+                    .cls-1,
+                    .cls-2 {
+                      fill: none;
+                    }
+
+                    .cls-2 {
+                      stroke-width: 0px;
+                    }
+
+                    .cls-3 {
+                      letter-spacing: -0.03em;
+                    }
+
+                    .cls-4 {
+                      letter-spacing: -0.02em;
+                    }
+
+                    .cls-5 {
+                      letter-spacing: -0.17em;
+                    }
+
+                    .cls-6 {
+                      letter-spacing: -0.05em;
+                    }
+
+                    .cls-7 {
+                      letter-spacing: -0.24em;
+                    }
+
+                    .cls-8 {
+                      font-family: var(--font-chillax);
+                      font-size: 52.5px;
+                      font-weight: 700;
+                    }
+                  </style>
+                </defs>
+                <g id="Calque_2" data-name="Calque 2">
+                  <rect class="cls-2" width="500" height="100" />
+                </g>
+                <g id="Calque_1" data-name="Calque 1">
+                  <g>
+                    <g>
+                      <path
+                        class="cls-1"
+                        d="m48.71,32.5c8.26-2.72,13.86,6.23,14.61,13.35"
+                      />
+                      <path
+                        class="cls-1"
+                        d="m24.5,52.22c-4.59-1.8-9.35-4.08-12.68-7.83-1.66-1.87-3.29-4.41-2.84-7.02.49-2.81,3.24-4.51,5.64-5.59,11.75-5.26,24.91,1.21,34.38,8.37,4.44,3.36,8.15,7.69,10.46,12.79,2.48,5.47,3.99,12.07,2.23,17.97-3.03,10.12-16.16,14.42-24.01,6.82-4.03-3.91-5.77-10.14-5.94-15.61-.18-5.93,1.67-11.97,4.5-17.14.71-1.31,1.51-2.57,2.37-3.79"
+                      />
+                    </g>
+                    <text class="cls-8" transform="translate(71.31 76.72)">
+                      <tspan class="cls-6" x="0" y="0">EDER</tspan>
+                      <tspan class="cls-3" x="132.72" y="0">OO</tspan>
+                      <tspan class="cls-6" x="211.16" y="0">N</tspan>
+                      <tspan class="cls-4" x="250.01" y="0">E</tspan>
+                      <tspan class="cls-7" x="282.19" y="0">Y</tspan>
+                      <tspan class="cls-5" x="304.77" y="0">.</tspan>
+                    </text>
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <nav>
+              <ul
+                class="flex items-center justify-center gap-4 uppercase font-medium text-sm font-sans"
+              >
+                <li>
+                  <a href="home" class="relative inline-block py-3 section-link"
+                    >Accueil</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services"
+                    class="relative inline-block py-3 section-link"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="about"
+                    class="relative inline-block py-3 section-link"
+                    >A-Propos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="projets"
+                    class="relative inline-block py-3 section-link"
+                    >Projets</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="contact"
+                    class="relative inline-block py-3 section-link"
+                    >Contacts</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="home" class="bg-[#4F6989] relative z-10 text-gray-50">
+      <div class="bg-hero">
+        <div class="max-w-screen-2xl relative mx-auto">
+          <div class="h-full w-full relative">
+            <div class="lg:h-[700px] w-full">
+              <div class="h-full w-full flex flex-rows items-center gap-2">
+                <div
+                  class="lg:basis-1/3 wrap-0 shrink-0 h-full flex items-center relative -mt-20"
+                >
+                  <img
+                      src="./images/cartoon.png"
+                      class="h-full w-auto rounded-full aspect-video object-cover"
+                      alt=""
+                    />
+                  
+                </div>
+                <div class="flex-1 lg:h-full pt-32">
+                  <div
+                    class="max-w-screen-sm mx-auto lg:h-full flex flex-col items-center justify-center gap-4 font-synonym font-light text-sm"
+                  >
+                    <div class="w-full flex h-[150px]">
+                      <p
+                        class="max-w-screen-sm text-5xl font-sans font-bold leading-none w-full text-left bg-clip-text text-transparent bg-gradient-to-r from-gray-50 to-[#687f9a] text-shadow ml-auto mr-0"
+                        id="typewriter"
+                      >
+                        Bonjour, je m'appelle Gedeon. Je suis un développeur web
+                        fullstack. Je vais designer et développer votre site
+                        web.
+                      </p>
+                    </div>
+                    <div
+                      class="h-auto max-w-[300px] bg-[#687f9a] p-2 rounded-xl relative before:absolute before:h-4 before:w-4 before:rotate-45 before:left-0 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:content-[''] before:inline-block before:bg-[#687f9a] ml-0 mr-auto"
+                    >
+                      <p class="">
+                        Une sélection de quelques une de mes
+                        <a
+                          id=""
+                          href="projets"
+                          class="section-link text-[#ffd0c6] uppercase hover:text-[#ff7154] underline underline-offset-4"
+                        >
+                          projets
+                        </a>
+                      </p>
+                    </div>
+                    <div
+                      class="h-auto max-w-[300px] bg-[#687f9a] p-2 rounded-xl relative before:absolute before:h-4 before:w-4 before:rotate-45 before:right-0 before:top-1/2 before:translate-x-1/2 before:-translate-y-1/2 before:content-[''] before:inline-block before:bg-[#687f9a] ml-auto mr-0"
+                    >
+                      <p>
+                        Découvrez les
+                        <a
+                          href="services"
+                          class="section-link text-[#ffd0c6] uppercase hover:text-[#ff7154]"
+                        >
+                          services
+                        </a>
+                        que je propose pour vous aider à la réalisation de vos
+                        projets.
+                      </p>
+                    </div>
+                    <div
+                      class="h-auto max-w-[300px] bg-[#687f9a] p-2 rounded-xl relative before:absolute before:h-4 before:w-4 before:rotate-45 before:left-0 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:content-[''] before:inline-block before:bg-[#687f9a] ml-0 mr-auto"
+                    >
+                      <p>
+                        Apprenez en plus
+                        <a
+                          href="about"
+                          class="section-link text-[#ffd0c6] uppercase hover:text-[#ff7154]"
+                        >
+                          à propos
+                        </a>
+                        moi et sur mon parcours
+                      </p>
+                    </div>
+                    <div
+                      class="h-auto max-w-[300px] bg-[#687f9a] p-2 rounded-xl relative before:absolute before:h-4 before:w-4 before:rotate-45 before:right-0 before:top-1/2 before:translate-x-1/2 before:-translate-y-1/2 before:content-[''] before:inline-block before:bg-[#687f9a] ml-auto mr-0"
+                    >
+                      <p>
+                        Vous pouvez me
+                        <a
+                          href="contact"
+                          class="section-link text-[#ffd0c6] uppercase hover:text-[#ff7154]"
+                        >
+                          contacter
+                        </a>
+                        pour me faire part de vos projets.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section></section>
+    <section id="projets" class="min-h-[700px] relative">
+      <!-- <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        id="visual"
+        viewBox="0 0 1440 300"
+        class="w-full h-auto absolute top-0"
+        version="1.1"
+      >
+        <path
+          d="M0 96L15 111.2C30 126.3 60 156.7 90 165.3C120 174 150 161 180 162.5C210 164 240 180 270 189.3C300 198.7 330 201.3 360 184.3C390 167.3 420 130.7 450 120.7C480 110.7 510 127.3 540 136.7C570 146 600 148 630 144.5C660 141 690 132 720 127.8C750 123.7 780 124.3 810 124.2C840 124 870 123 900 132.5C930 142 960 162 990 159.3C1020 156.7 1050 131.3 1080 134.5C1110 137.7 1140 169.3 1170 180.7C1200 192 1230 183 1260 168.5C1290 154 1320 134 1350 125.5C1380 117 1410 120 1425 121.5L1440 123L1440 0L1425 0C1410 0 1380 0 1350 0C1320 0 1290 0 1260 0C1230 0 1200 0 1170 0C1140 0 1110 0 1080 0C1050 0 1020 0 990 0C960 0 930 0 900 0C870 0 840 0 810 0C780 0 750 0 720 0C690 0 660 0 630 0C600 0 570 0 540 0C510 0 480 0 450 0C420 0 390 0 360 0C330 0 300 0 270 0C240 0 210 0 180 0C150 0 120 0 90 0C60 0 30 0 15 0L0 0Z"
+          fill="#4F6989"
+          stroke-linecap="round"
+          stroke-linejoin="miter"
+        />
+      </svg> -->
+      <div class="w-screen bg-[#e6eaee]">
+        <div class="py-16">
+          <div
+            class="flex nowrap gap-32 w-full py-6 px-4 overflow-x-scroll scrollbar-hide scroll-smooth"
+          >
+            <div
+              class="basis-[500px] h-[600px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden relative group cursor-pointer"
+            >
+              <div class="h-full w-full flex items-center justify-center">
+                text
+              </div>
+              <div
+                class="h-full w-full absolute top-0 left-0 clip-left group-hover:-translate-x-full cubic"
+              >
+                <img
+                  src="https://images.pexels.com/photos/4006506/pexels-photo-4006506.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                  alt=""
+                  class="h-full w-full object-cover object-top"
+                />
+              </div>
+              <div
+                class="h-full w-full clip-right absolute top-0 left-0 group-hover:translate-x-full cubic"
+              >
+                <img
+                  src="https://images.pexels.com/photos/4006506/pexels-photo-4006506.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                  alt=""
+                  class="h-full w-full object-cover object-top"
+                />
+              </div>
+            </div>
+            <div
+              class="basis-[500px] h-[600px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden relative group cursor-pointer"
+            >
+              <div
+                class="h-full w-full flex flex-col gap-8 items-center justify-center"
+              >
+                <div
+                  class="h-auto max-w-[400px] bg-[#687f9a] p-2 rounded-xl relative before:absolute before:h-4 before:w-4 before:rotate-45 before:left-0 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:content-[''] before:inline-block before:bg-[#687f9a] ml-auto mr-auto -translate-x-[30px]"
+                >
+                  <p class="">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quisquam, voluptatum.
+                  </p>
+                </div>
+                <div
+                  class="h-auto max-w-[400px] bg-[#687f9a] p-2 rounded-xl relative before:absolute before:h-4 before:w-4 before:rotate-45 before:left-0 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:content-[''] before:inline-block before:bg-[#687f9a] ml-auto mr-auto -translate-x-[30px]"
+                >
+                  <p class="">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quisquam, voluptatum.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="h-full w-full absolute top-0 left-0 clip-left group-hover:-translate-x-1/2 cubic blur-none group-hover:blur-xl"
+              >
+                <img
+                  src="https://images.pexels.com/photos/4654181/pexels-photo-4654181.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                  alt=""
+                  class="h-full w-full object-cover object-top"
+                />
+              </div>
+              <div
+                class="h-full w-full clip-right absolute top-0 left-0 group-hover:translate-x-1/2 cubic blur-none group-hover:blur-lg"
+              >
+                <img
+                  src="https://images.pexels.com/photos/4654181/pexels-photo-4654181.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                  alt=""
+                  class="h-full w-full object-cover object-top"
+                />
+              </div>
+            </div>
+
+            <div
+              class="basis-[500px] h-[600px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+            >
+              <img
+                src="https://images.pexels.com/photos/1396538/pexels-photo-1396538.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt=""
+                class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+              />
+            </div>
+            <div
+              class="basis-[500px] h-[600px] bg-zinc-800 shrink-0 grow-0 rounded-md border border-gray-400/10 overflow-hidden"
+            >
+              <img
+                src="https://images.pexels.com/photos/14447602/pexels-photo-14447602.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt=""
+                class="aspect-9/16 grayscale mix-blend-normal h-full w-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="min-h-[700px]">
+      <div class="max-w-6xl">
+        <div class="container"></div>
+      </div>
+    </section>
+
+    <section id="about" class="min-h-[700px]">
+      <div class="max-w-6xl">
+        <div class="container"></div>
+      </div>
+    </section>
+    <footer></footer>
+
+    <section id="contact" class="min-h-[700px]">
+      <div class="max-w-6xl">
+        <div class="container"></div>
+      </div>
+    </section>
+
+    <script>
+      const sentences = [
+        "Bonjour,",
+        "Je m'appelle Gédéon.",
+        "Je suis un développeur web fullstack.",
+        "Je vais designer et développer votre site internet."
+      ];
+
+      const typewriterElement = document.getElementById("typewriter");
+
+      typewriterElement.textContent = "";
+
+      const delay = 20;
+      let i = 0; // sentence index
+
+      function typeText(index) {
+        if (index < sentences[i % sentences.length].length) {
+          typewriterElement.textContent +=
+            sentences[i % sentences.length][index];
+          setTimeout(() => typeText(index + 1), delay);
+        } else {
+          i++;
+          setTimeout(() => eraseText(sentences[i % 3].length - 1), 3000);
+        }
+      }
+
+      function eraseText(index) {
+        if (index >= 0) {
+          typewriterElement.textContent = typewriterElement.textContent.slice(
+            0,
+            index
+          );
+          setTimeout(() => eraseText(index - 1), delay);
+        } else {
+          setTimeout(() => typeText(0), delay);
+        }
+      }
+      typeText(0);
+
+      const links = document.querySelectorAll(".section-link");
+      links.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const href = link.getAttribute("href").replace("#", "");
+          const target = document.getElementById(href);
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

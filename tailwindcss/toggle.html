@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toggle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./highlight/styles/atom-one-dark.min.css" />
+    <script src="./highlight/highlight.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          darkMode: "class",
+          extend: {
+            container: {
+              center: true,
+              padding: "1rem"
+            },
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+              synonym: ["Synonym", "sans-serif"]
+            },
+            colors: {
+              darkBlue: "#032957",
+              orange: "#FF6141"
+            },
+            backgroundImage: {
+              hero: "radial-gradient(100% 100% at 50% 0%, #000409 0%, rgba(1, 8, 17, 0.00) 100%);"
+            }
+          }
+        }
+      };
+    </script>
+    <script type="text/javascript">
+      hljs.highlightAll();
+    </script>
+    <style>
+      @font-face {
+        font-family: "chillax";
+        font-display: swap;
+        src: url("./fonts/chillax/Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "synonym";
+        font-display: swap;
+        src: url("./fonts/synonym/Synonym-Regular.ttf");
+        font-weight: 100 900;
+      }
+      body {
+        scroll-behavior: smooth;
+      }
+      html {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+      .text-edge-outline {
+        /* -webkit-text-stroke: 2px hsla(0, 0%, 100%, 0.3); */
+        -webkit-text-stroke: 2px hsla(10, 100%, 70%, 0.7);
+      }
+      .text-shadow {
+        text-shadow: 0 2px 40px hsla(0, 0%, 0%, 0.5);
+      }
+      .clip-left {
+        clip-path: polygon(50% 0, 50% 100%, 0 100%, 0 0);
+      }
+      .clip-right {
+        clip-path: polygon(100% 0, 100% 100%, 50% 100%, 50% 0);
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .cubic {
+        transition: all 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      }
+      .slider,
+      .slider:before {
+        transition: all 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      }
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      input[type="checkbox"]:checked + .slider:before {
+        -webkit-transform: translate(48px, -50%);
+        -ms-transform: translate(48px, -50%);
+        transform: translate(48px, -50%);
+      }
+
+      input[type="checkbox"]:checked + .slider {
+        /* background-color: lightgreen; */
+        background-color: #f1b4bb;
+      }
+      code {
+        background: black !important;
+        padding: 1rem !important;
+        font-size: 0.75rem !important;
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center w-screen h-screen">
+    <div class="w-[540px] h-[960px] overflow-hidden mx-auto bg-[#FDF0F0]">
+      <div
+        class="w-full h-[300px] shadow-lg drop-shadow-lg bg-[#1F4172] flex flex-col items-center justify-center gap-4"
+      >
+        <h1 class="text-5xl font-bold uppercase text-center text-white">
+          CSS-Toggle
+        </h1>
+        <div class="flex gap-2 relative items-center">
+          <span class="text-[#f1b4bb] text-3xl font-bold uppercase"> NON </span>
+          <span class="relative h-12 w-24">
+            <input
+              class="absolute top-0 left-0 h-12 w-24 cursor-pointer z-50 opacity-0"
+              type="checkbox"
+            />
+            <span
+              class="relative border-2 border-[#f1b4bb] slider inline-block w-24 h-12 bg-none rounded-full before:content-[''] before:h-10 before:w-10 before:bg-white before:rounded-full before:top-1/2 before:-translate-y-1/2 before:z-40 before:block before:absolute before:left-[2px]"
+              onclick=""
+            >
+            </span>
+          </span>
+          <span class="text-[#f1b4bb] text-3xl font-bold uppercase"> OUI </span>
+        </div>
+        <p class="text-white text-base">
+          Code complet: https://blog.gederooney.me
+        </p>
+      </div>
+      <div class="flex gap-1">
+        <pre>
+<code class="language-html">
+&lt;div class="toggle"&gt;
+  &lt;span class=""&gt;
+	NON
+  &lt;/span&gt;
+  &lt;span class=""&gt;
+	&lt;input
+	  class=""
+	  type="checkbox"
+	/&gt;
+	&lt;span class="slider"&gt;
+	&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class=""&gt;
+	OUI
+  &lt;/span&gt;
+&lt;/div&gt;
+</code>
+</pre>
+        <pre>
+<code class="language-css">
+...
+.toggle .slider {
+  position: relative;
+  display: inline-block;
+  width: 96px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #f1b4bb;
+  transition: all 0.4s 
+  cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.toggle .slider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, 
+  -50%);
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 0.4s 
+  cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.toggle input:checked + .slider {
+  background-color: #f1b4bb;
+}
+.toggle input:checked + .slider::before {
+  transform: translate(48px, -50%);
+}
+</code>
+</pre>
+      </div>
+    </div>
+    <script>
+      const input = document.querySelector('input[type="checkbox"]');
+      input.addEventListener("change", e => {
+        if (e.target.checked) {
+          document.body.classList.add("dark");
+        } else {
+          document.body.classList.remove("dark");
+        }
+      });
+    </script>
+  </body>
+</html>

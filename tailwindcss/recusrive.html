@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+            },
+            colors: {
+              dutchWhite: {
+                100: "#fff3dd",
+                200: "#fff1d7",
+                300: "#ffefd1",
+                400: "#ffedcc",
+                500: "#ffebc6",
+                600: "#e6d4b2",
+                700: "#ccbc9e",
+                800: "#b3a58b",
+                900: "#998d77",
+              },
+              selectiveYellow: "#ffb100",
+              amaranthanPink: "#f194b4",
+              caribbeanCurrent: "#006C67",
+              midnightGreen: "#003844",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @font-face {
+        font-family: "chillax";
+        src: url("./Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+
+      html {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen w-screen bg-gradient-to-br from-gray-900 to-zinc-900 grid items-center justify-start"
+  >
+    <div class="w-lg mx-auto px-4">
+      <h1
+        class="bg-gradient-to-r from-gray-100 via-gray-600 to-zinc-400 bg-clip-text select-none text-transparent py-2"
+      >
+        <span id="typewriter" class="text-7xl font-bold inline-block">
+          <span class="sr-only">
+            Bonjour, ceci est une animation typewriter!
+          </span>
+        </span>
+      </h1>
+    </div>
+
+    <script>
+      const sentences = [
+        "Bonjour",
+        "Je suis le texte",
+        "animé par la récursivité.",
+      ];
+
+      const typewriterElement = document.getElementById("typewriter");
+
+      typewriterElement.textContent = "";
+
+      const delay = 10;
+      let i = 0; // sentence index
+
+      function typeText(index) {
+        if (index < sentences[i % 3].length) {
+          typewriterElement.textContent += sentences[i % 3][index];
+          setTimeout(() => typeText(index + 1), delay);
+        } else {
+          i++;
+          setTimeout(() => eraseText(sentences[i % 3].length - 1), 3000);
+        }
+      }
+
+      function eraseText(index) {
+        if (index >= 0) {
+          typewriterElement.textContent = typewriterElement.textContent.slice(
+            0,
+            index,
+          );
+          setTimeout(() => eraseText(index - 1), delay);
+        } else {
+          setTimeout(() => typeText(0), delay);
+        }
+      }
+      typeText(0);
+    </script>
+  </body>
+</html>

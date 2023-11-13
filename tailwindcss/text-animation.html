@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @font-face {
+        font-family: "chillax";
+        src: url("./Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+
+      html {
+        overflow: hidden;
+      }
+      .animate span {
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+        display: inline-block;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen w-screen overflow-scroll bg-gradient-to-br from-gray-700 to-gray-900"
+  >
+    <div class="h-full w-full flex justify-center items-center">
+      <div class="max-w-screen-lg">
+        <h1
+          class="animate font-sans font-light text-6xl select-none text-zinc-400 tracking-tighter text-center px-8"
+        >
+          Gederooney est un bon
+        </h1>
+        <h1
+          class="animate font-sans font-light text-6xl select-none text-zinc-400 tracking-tighter text-center px-8"
+        >
+          dévéloppeur web en javascript.
+        </h1>
+      </div>
+    </div>
+    <script type="text/javascript">
+      class AnimateText {
+        els = null;
+        hoverColor = "rgb(228 228 231)";
+        hoverWeight = 300;
+
+        constructor(classname, hoverColor, hoverWeight) {
+          this.els = document.querySelectorAll(classname);
+          this.hoverColor = hoverColor || this.hoverColor;
+          this.hoverWeight =
+            hoverWeight >= 300 ? hoverWeight : this.hoverWeight;
+        }
+
+        styleCurrentSpan(span) {
+          span.style = `
+          font-weight: ${this.hoverWeight};
+           color: ${this.hoverColor}; 
+           `;
+        }
+
+        styleNextSiblings(span) {
+          const next = span.nextElementSibling;
+
+          if (next) {
+            next.style = `
+            font-weight: ${this.hoverWeight - 100}; 
+            color: ${this.hoverColor};
+            `;
+
+            const nextNext = next.nextElementSibling;
+            if (nextNext) {
+              nextNext.style = `font-weight: ${
+                this.hoverWeight - 200
+              }; color: ${this.hoverColor};`;
+            }
+          }
+        }
+
+        stylePrevSiblings(span) {
+          const prev = span.previousElementSibling;
+
+          if (prev) {
+            prev.style = `
+            font-weight: ${this.hoverWeight - 100}; 
+            color: ${this.hoverColor};`;
+
+            const prevPrev = prev.previousElementSibling;
+            if (prevPrev) {
+              prevPrev.style = `font-weight: ${
+                this.hoverWeight - 200
+              }; color: ${this.hoverColor};`;
+            }
+          }
+        }
+
+        removeAllStyles() {
+          this.els.forEach((el) => {
+            el.querySelectorAll("span").forEach((span) => {
+              span.style = "";
+            });
+          });
+        }
+
+        make() {
+          this.els.forEach((el) => {
+            const chars = el.textContent.trim().split("");
+            const spanString = chars.reduce(
+              (acc, curr) => acc + `<span>${curr}</span>`,
+              "",
+            );
+
+            el.innerHTML = spanString;
+
+            el.querySelectorAll("span").forEach((span, index) => {
+              span.addEventListener("mouseover", (event) => {
+                this.removeAllStyles();
+                this.styleCurrentSpan(span);
+                this.styleNextSiblings(span);
+                this.stylePrevSiblings(span);
+              });
+              span.addEventListener("mouseleave", (e) =>
+                this.removeAllStyles(),
+              );
+            });
+          });
+        }
+      }
+
+      const textAnimate = new AnimateText(".animate", "rgb(228 228 231)", 600);
+      textAnimate.make();
+    </script>
+  </body>
+</html>
