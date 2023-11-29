@@ -1,0 +1,92 @@
+<!--
+    FILEPATH: /views/index.html
+    AUTHOR: Gédéon Yebadokpo (github: gederooney)
+    DESCRIPTION: [Description de votre fichier]
+    CREATED: 2023-11-17
+    MODIFIED: 2023-11-17
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Ajout de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+    </style>
+  </head>
+  <body class="h-screen w-screen bg-gray-100" style="">
+    <section>
+      <div class="max-w-2xl mx-auto my-16 relative">
+        <form action="/search">
+          <input
+            type="text"
+            type="text"
+            name="q"
+            class="shadow-md px-8 drop-shadow-sm h-12 rounded-full w-full bg-transparent border border-gray-900/10"
+            value="<%= query %>"
+          />
+          <button
+            type="submit"
+            class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-900 text-gray-50 h-8 px-4 mr-2 rounded-full"
+          >
+            Generer
+          </button>
+        </form>
+      </div>
+    </section>
+    <section>
+      <div class="max-w-2xl mx-auto my-16">
+        <div class="flex flex-wrap items-center justify-between">
+          <% shades.map((shade) => { %>
+          <div class="text-center">
+            <div
+              class="w-16 rounded-md h-16 shrink-0 grow-0"
+              style="background-color: <%= shade %>"
+            ></div>
+            <span class="text-xs font-light"> <%= shade %> </span>
+          </div>
+          <% }) %>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between my-16">
+          <% shadesChroma.map((shade) => { %>
+          <div class="text-center">
+            <div
+              class="w-16 rounded-md h-16 shrink-0 grow-0"
+              style="background-color: <%= shade %>"
+            ></div>
+            <span class="text-xs font-light"> <%= shade %> </span>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="max-w-6xl mx-auto my-16">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <% gradients.map((gradient) => { %>
+          <div
+            class="w-40 rounded-md h-20 shrink-0 grow-0"
+            style="
+              background: linear-gradient(
+                to right,
+                <%- `${gradient[0]},
+                ${gradient[1]},
+                ${gradient[2]},
+                ${gradient[3]},
+                ${gradient[4]} ` %>
+              );
+            "
+          ></div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

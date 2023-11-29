@@ -1,0 +1,31 @@
+<!--
+    FILEPATH: /views/index.html
+    AUTHOR: Gédéon Yebadokpo (github: gederooney)
+    DESCRIPTION: [Description de votre fichier]
+    CREATED: 2023-11-17
+    MODIFIED: 2023-11-17
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Ajout de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+    </style>
+</head>
+<body class="h-screen w-screen bg-gray-100">
+    <section>
+        <div class="max-w-2xl mx-auto my-16">
+            <form action="/search">
+                <input type="text" type="text" name="q" class="shadow-md drop-shadow-sm h-12 rounded-full w-full bg-transparent border border-gray-900" />
+            </form>
+        </div>
+    </section>
+</body>
+</html>
