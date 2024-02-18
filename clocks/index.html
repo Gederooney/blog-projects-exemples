@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./highlight/styles/atom-one-dark.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./highlight/highlight.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Chillax", "sans-serif"],
+            },
+            rotate: {},
+          },
+        },
+      };
+    </script>
+
+    <script type="text/javascript">
+      hljs.highlightAll();
+    </script>
+    <style>
+      :root {
+        --primary-light: #8abdff;
+        --primary: #6d5dfc;
+        --primary-dark: #5b0eeb;
+
+        --grey-900: rgb(17 24 39);
+        --greyLight-1: #e4ebf5;
+        ----grey-950: rgb(3 7 18);
+        --greyLight-3: #bec8e4;
+        --greyDark: #9baacf;
+      }
+
+      code {
+        position: relative !important;
+        background: black !important;
+        padding: 0.5rem !important;
+        font-size: 0.6rem !important;
+        border-radius: 10px;
+        display: block;
+        margin: auto;
+      }
+
+      @font-face {
+        font-family: "chillax";
+        src: url("./Chillax-Variable.ttf");
+        font-weight: 100 900;
+      }
+      #clock {
+        box-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.2),
+          -0.2rem -0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10rem);
+        opacity: 0.5;
+      }
+      .marker {
+        box-shadow: inset 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.2),
+          inset -0.1rem -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
+      }
+
+      .marker::after {
+        content: "";
+        width: 60%;
+        height: 60%;
+        position: absolute;
+        box-shadow: inset 1px 1px 1px var(----grey-950),
+          inset -1px -1px 1px var(--grey-900);
+        border-radius: 50%;
+        top: 20%;
+        left: 20%;
+        filter: blur(1px);
+      }
+
+      html {
+        overflow: hidden;
+      }
+      .animate span {
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+        display: inline-block;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body class="h-screen w-screen">
+    <div
+      class="h-full w-full grid place-items-center"
+    >
+      <div
+        class="mx-auto w-96 h-96 bg-gray-400 flex items-center justify-center rounded-lg"
+      >
+        <div
+          id="clock"
+          class="relative h-48 w-48 bg-gray-100 rounded-full flex justify-center items-center mx-auto"
+        >
+          <div
+            class="marker w-[95%] h-[95%] rounde-full relative rounded-full"
+          ></div>
+          <span
+            class="absolute h-1.5 w-1.5 rounded-full bg-gray-800 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+          ></span>
+          <span
+            class="w-px h-1/6 absolute bg-cyan-600 bottom-1/2 left-1/2 -translate-x-1/2 rotate-45 origin-bottom z-10 rounded-t-[1000px]"
+            id="hour"
+          ></span>
+          <span
+            class="w-px h-1/4 absolute bg-orange-600 bottom-1/2 left-1/2 -translate-x-1/2 rotate-12 origin-bottom z-10"
+            id="minute"
+          ></span>
+          <span
+            class="w-px h-1/3 absolute bg-gray-950 bottom-1/2 left-1/2 -translate-x-1/2 rotate-90 origin-bottom z-10"
+            id="second"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['12'] before:w-px before:absolute before:-left-1.5 before:top-1.5 before:text-xs origin-bottom before:text-gray-950"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['1'] before:w-px before:absolute before:-left-1 before:top-1.5 before:text-xs origin-bottom before:text-gray-950 rotate-[30deg] before:rotate-[-30deg]"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['2'] before:w-px before:absolute before:-left-1 before:top-1.5 before:text-xs origin-bottom before:text-gray-950 rotate-[60deg] before:rotate-[-60deg]"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['3'] before:w-px before:absolute before:-left-0 before:top-1.5 before:text-xs origin-bottom before:text-gray-950 rotate-[90deg] before:rotate-[-90deg]"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['4'] before:w-px before:absolute before:left-1 before:top-1.5 before:text-xs origin-bottom before:text-gray-950 rotate-[120deg] before:rotate-[-120deg]"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['5'] before:w-px before:absolute before:left-1 before:top-1 before:text-xs origin-bottom before:text-gray-950 rotate-[150deg] before:rotate-[-150deg]"
+          ></span>
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['6'] before:w-px before:absolute before:left-1 before:top-1 before:text-xs origin-bottom before:text-gray-950 rotate-[180deg] before:rotate-[-180deg]"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['7'] before:w-px before:absolute before:top-1 before:text-xs before:left-0 origin-bottom before:text-gray-950 rotate-[210deg] before:rotate-[-210deg]"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['8'] before:w-px before:absolute before:-top-0 before:text-xs before:left-1 origin-bottom before:text-gray-950 rotate-[240deg] before:rotate-[-240deg]"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['9'] before:w-px before:absolute before:-top-0 before:text-xs origin-bottom before:text-gray-950 rotate-[270deg] before:rotate-[-270deg]"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['10'] before:w-px before:absolute before:-left-1 before:text-xs before:-top-0 origin-bottom before:text-gray-950 rotate-[300deg] before:rotate-[-300deg]"
+          ></span>
+
+          <span
+            class="absolute top-0 left-1/2 w-px h-1/2 block before:content-['11'] before:w-px before:absolute before:top-1 before:-left-1 before:text-xs origin-bottom before:text-gray-950 rotate-[330deg] before:rotate-[-330deg]"
+          ></span>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      class Clock {
+        constructor() {
+          this.hour = {
+            el: document.getElementById("hour"),
+            deg: 0,
+          };
+          this.minute = {
+            el: document.getElementById("minute"),
+            deg: 0,
+          };
+          this.second = {
+            el: document.getElementById("second"),
+            deg: 0,
+          };
+
+          this.compose(
+            this.updateClock,
+            this.calculateHourDeg,
+            this.calculateMinuteDeg,
+            this.calculateSecondDeg,
+          )(this.getNewDate());
+        }
+
+        getNewDate() {
+          const date = new Date();
+          const hour = date.getHours();
+          const minute = date.getMinutes();
+          const second = date.getSeconds();
+          return { hour, minute, second };
+        }
+
+        calculateHourDeg(clockObject) {
+          const { hour, minute, second } = clockObject;
+          const hourDeg = hour * 30 + minute / 60 + second / 3600;
+          return { ...clockObject, hourDeg };
+        }
+
+        calculateMinuteDeg(clockObject) {
+          const { minute, second } = clockObject;
+          const minuteDeg = minute * 6 + second / 60;
+          return { ...clockObject, minuteDeg };
+        }
+
+        calculateSecondDeg(clockObject) {
+          const { second } = clockObject;
+          const secondDeg = second * 6;
+          return { ...clockObject, secondDeg };
+        }
+
+        updateClock(clockObject) {
+          const { hourDeg, minuteDeg, secondDeg } = clockObject;
+
+          const hour = document.getElementById("hour");
+          const minute = document.getElementById("minute");
+          const second = document.getElementById("second");
+
+          hour.style.transform = `rotate(${hourDeg}deg)`;
+          minute.style.transform = `rotate(${minuteDeg}deg)`;
+          second.style.transform = `rotate(${secondDeg}deg)`;
+        }
+
+        compose =
+          (...fns) =>
+          (x) =>
+            fns.reduceRight((y, f) => f(y), x);
+
+        startTick() {
+          setInterval(() => {
+            this.compose(
+              this.updateClock,
+              this.calculateHourDeg,
+              this.calculateMinuteDeg,
+              this.calculateSecondDeg,
+            )(this.getNewDate());
+          }, 1000);
+        }
+      }
+
+      const clock = new Clock();
+      clock.startTick();
+    </script>
+  </body>
+</html>

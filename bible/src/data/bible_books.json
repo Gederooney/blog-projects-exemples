@@ -1,0 +1,464 @@
+{
+  "gen": {
+    "Nom": "Genèse",
+    "abbr": "gen",
+    "testament": 0,
+    "index": 0,
+    "chaptersCount": 50
+  },
+  "ex": {
+    "Nom": "Exode",
+    "abbr": "ex",
+    "testament": 0,
+    "index": 1,
+    "chaptersCount": 40
+  },
+  "lev": {
+    "Nom": "Lévitique",
+    "abbr": "lev",
+    "testament": 0,
+    "index": 2,
+    "chaptersCount": 27
+  },
+  "nom": {
+    "Nom": "Nombres",
+    "abbr": "nom",
+    "testament": 0,
+    "index": 3,
+    "chaptersCount": 36
+  },
+  "deut": {
+    "Nom": "Deutéronome",
+    "abbr": "deut",
+    "testament": 0,
+    "index": 4,
+    "chaptersCount": 34
+  },
+  "jos": {
+    "Nom": "Josué",
+    "abbr": "jos",
+    "testament": 0,
+    "index": 5,
+    "chaptersCount": 24
+  },
+  "jug": {
+    "Nom": "Juges",
+    "abbr": "jug",
+    "testament": 0,
+    "index": 6,
+    "chaptersCount": 21
+  },
+  "ruth": {
+    "Nom": "Ruth",
+    "abbr": "ruth",
+    "testament": 0,
+    "index": 7,
+    "chaptersCount": 4
+  },
+  "1.sam": {
+    "Nom": "1 Samuel",
+    "abbr": "1.sam",
+    "testament": 0,
+    "index": 8,
+    "chaptersCount": 31
+  },
+  "2.sam": {
+    "Nom": "2 Samuel",
+    "abbr": "2.sam",
+    "testament": 0,
+    "index": 9,
+    "chaptersCount": 24
+  },
+  "1.ro": {
+    "Nom": "1 Rois",
+    "abbr": "1.ro",
+    "testament": 0,
+    "index": 10,
+    "chaptersCount": 22
+  },
+  "2.ro": {
+    "Nom": "2 Rois",
+    "abbr": "2.ro",
+    "testament": 0,
+    "index": 11,
+    "chaptersCount": 25
+  },
+  "1.chr": {
+    "Nom": "1 Chroniques",
+    "abbr": "1.chr",
+    "testament": 0,
+    "index": 12,
+    "chaptersCount": 29
+  },
+  "2.chr": {
+    "Nom": "2 Chroniques",
+    "abbr": "2.chr",
+    "testament": 0,
+    "index": 13,
+    "chaptersCount": 36
+  },
+  "esd": {
+    "Nom": "Esdras",
+    "abbr": "esd",
+    "testament": 0,
+    "index": 14,
+    "chaptersCount": 10
+  },
+  "neh": {
+    "Nom": "Néhémie",
+    "abbr": "neh",
+    "testament": 0,
+    "index": 15,
+    "chaptersCount": 13
+  },
+  "est": {
+    "Nom": "Esther",
+    "abbr": "est",
+    "testament": 0,
+    "index": 16,
+    "chaptersCount": 10
+  },
+  "job": {
+    "Nom": "Job",
+    "abbr": "job",
+    "testament": 0,
+    "index": 17,
+    "chaptersCount": 42
+  },
+  "ps": {
+    "Nom": "Psaumes",
+    "abbr": "ps",
+    "testament": 0,
+    "index": 18,
+    "chaptersCount": 150
+  },
+  "prov": {
+    "Nom": "Proverbes",
+    "abbr": "prov",
+    "testament": 0,
+    "index": 19,
+    "chaptersCount": 31
+  },
+  "eccl": {
+    "Nom": "Ecclésiaste",
+    "abbr": "eccl",
+    "testament": 0,
+    "index": 20,
+    "chaptersCount": 12
+  },
+  "cant": {
+    "Nom": "Cantique des Cantiques",
+    "abbr": "cant",
+    "testament": 0,
+    "index": 21,
+    "chaptersCount": 8
+  },
+  "es": {
+    "Nom": "Ésaïe",
+    "abbr": "es",
+    "testament": 0,
+    "index": 22,
+    "chaptersCount": 66
+  },
+  "jer": {
+    "Nom": "Jérémie",
+    "abbr": "jer",
+    "testament": 0,
+    "index": 23,
+    "chaptersCount": 52
+  },
+  "lam": {
+    "Nom": "Lamentations",
+    "abbr": "lam",
+    "testament": 0,
+    "index": 24,
+    "chaptersCount": 5
+  },
+  "ez": {
+    "Nom": "Ézéchiel",
+    "abbr": "ez",
+    "testament": 0,
+    "index": 25,
+    "chaptersCount": 48
+  },
+  "dan": {
+    "Nom": "Daniel",
+    "abbr": "dan",
+    "testament": 0,
+    "index": 26,
+    "chaptersCount": 12
+  },
+  "os": {
+    "Nom": "Osée",
+    "abbr": "os",
+    "testament": 0,
+    "index": 27,
+    "chaptersCount": 14
+  },
+  "joel": {
+    "Nom": "Joël",
+    "abbr": "joel",
+    "testament": 0,
+    "index": 28,
+    "chaptersCount": 4
+  },
+  "am": {
+    "Nom": "Amos",
+    "abbr": "am",
+    "testament": 0,
+    "index": 29,
+    "chaptersCount": 9
+  },
+  "abd": {
+    "Nom": "Abdias",
+    "abbr": "abd",
+    "testament": 0,
+    "index": 30,
+    "chaptersCount": 1
+  },
+  "jon": {
+    "Nom": "Jonas",
+    "abbr": "jon",
+    "testament": 0,
+    "index": 31,
+    "chaptersCount": 4
+  },
+  "mich": {
+    "Nom": "Michée",
+    "abbr": "mich",
+    "testament": 0,
+    "index": 32,
+    "chaptersCount": 7
+  },
+  "nah": {
+    "Nom": "Nahum",
+    "abbr": "nah",
+    "testament": 0,
+    "index": 33,
+    "chaptersCount": 3
+  },
+  "hab": {
+    "Nom": "Habacuc",
+    "abbr": "hab",
+    "testament": 0,
+    "index": 34,
+    "chaptersCount": 3
+  },
+  "soph": {
+    "Nom": "Sophonie",
+    "abbr": "soph",
+    "testament": 0,
+    "index": 35,
+    "chaptersCount": 3
+  },
+  "agg": {
+    "Nom": "Aggée",
+    "abbr": "agg",
+    "testament": 0,
+    "index": 36,
+    "chaptersCount": 2
+  },
+  "zach": {
+    "Nom": "Zacharie",
+    "abbr": "zach",
+    "testament": 0,
+    "index": 37,
+    "chaptersCount": 14
+  },
+  "mal": {
+    "Nom": "Malachie",
+    "abbr": "mal",
+    "testament": 0,
+    "index": 38,
+    "chaptersCount": 3
+  },
+  "mt": {
+    "Nom": "Matthieu",
+    "abbr": "mt",
+    "testament": 1,
+    "index": 0,
+    "chaptersCount": 28
+  },
+  "mc": {
+    "Nom": "Marc",
+    "abbr": "mc",
+    "testament": 1,
+    "index": 1,
+    "chaptersCount": 16
+  },
+  "lc": {
+    "Nom": "Luc",
+    "abbr": "lc",
+    "testament": 1,
+    "index": 2,
+    "chaptersCount": 24
+  },
+  "jn": {
+    "Nom": "Jean",
+    "abbr": "jn",
+    "testament": 1,
+    "index": 3,
+    "chaptersCount": 21
+  },
+  "ac": {
+    "Nom": "Actes des Apôtres",
+    "abbr": "ac",
+    "testament": 1,
+    "index": 4,
+    "chaptersCount": 28
+  },
+  "rm": {
+    "Nom": "Romains",
+    "abbr": "rm",
+    "testament": 1,
+    "index": 5,
+    "chaptersCount": 16
+  },
+  "1.co": {
+    "Nom": "1 Corinthiens",
+    "abbr": "1.co",
+    "testament": 1,
+    "index": 6,
+    "chaptersCount": 16
+  },
+  "2.co": {
+    "Nom": "2 Corinthiens",
+    "abbr": "2.co",
+    "testament": 1,
+    "index": 7,
+    "chaptersCount": 13
+  },
+  "ga": {
+    "Nom": "Galates",
+    "abbr": "ga",
+    "testament": 1,
+    "index": 8,
+    "chaptersCount": 6
+  },
+  "ep": {
+    "Nom": "Éphésiens",
+    "abbr": "ep",
+    "testament": 1,
+    "index": 9,
+    "chaptersCount": 6
+  },
+  "ph": {
+    "Nom": "Philippiens",
+    "abbr": "ph",
+    "testament": 1,
+    "index": 10,
+    "chaptersCount": 4
+  },
+  "col": {
+    "Nom": "Colossiens",
+    "abbr": "col",
+    "testament": 1,
+    "index": 11,
+    "chaptersCount": 4
+  },
+  "1.th": {
+    "Nom": "1 Thessaloniciens",
+    "abbr": "1.th",
+    "testament": 1,
+    "index": 12,
+    "chaptersCount": 5
+  },
+  "2.th": {
+    "Nom": "2 Thessaloniciens",
+    "abbr": "2.th",
+    "testament": 1,
+    "index": 13,
+    "chaptersCount": 3
+  },
+  "1.tm": {
+    "Nom": "1 Timothée",
+    "abbr": "1.tm",
+    "testament": 1,
+    "index": 14,
+    "chaptersCount": 6
+  },
+  "2.tm": {
+    "Nom": "2 Timothée",
+    "abbr": "2.tm",
+    "testament": 1,
+    "index": 15,
+    "chaptersCount": 4
+  },
+  "tt": {
+    "Nom": "Tite",
+    "abbr": "tt",
+    "testament": 1,
+    "index": 16,
+    "chaptersCount": 3
+  },
+  "phm": {
+    "Nom": "Philémon",
+    "abbr": "phm",
+    "testament": 1,
+    "index": 17,
+    "chaptersCount": 1
+  },
+  "he": {
+    "Nom": "Hébreux",
+    "abbr": "he",
+    "testament": 1,
+    "index": 18,
+    "chaptersCount": 13
+  },
+  "jc": {
+    "Nom": "Jacques",
+    "abbr": "jc",
+    "testament": 1,
+    "index": 19,
+    "chaptersCount": 5
+  },
+  "1.p": {
+    "Nom": "1 Pierre",
+    "abbr": "1.p",
+    "testament": 1,
+    "index": 20,
+    "chaptersCount": 5
+  },
+  "2.p": {
+    "Nom": "2 Pierre",
+    "abbr": "2.p",
+    "testament": 1,
+    "index": 21,
+    "chaptersCount": 3
+  },
+  "1.jn": {
+    "Nom": "1 Jean",
+    "abbr": "1.jn",
+    "testament": 1,
+    "index": 22,
+    "chaptersCount": 5
+  },
+  "2.jn": {
+    "Nom": "2 Jean",
+    "abbr": "2.jn",
+    "testament": 1,
+    "index": 23,
+    "chaptersCount": 1
+  },
+  "3.jn": {
+    "Nom": "3 Jean",
+    "abbr": "3.jn",
+    "testament": 1,
+    "index": 24,
+    "chaptersCount": 1
+  },
+  "jude": {
+    "Nom": "Jude",
+    "abbr": "jude",
+    "testament": 1,
+    "index": 25,
+    "chaptersCount": 1
+  },
+  "ap": {
+    "Nom": "Apocalypse",
+    "abbr": "ap",
+    "testament": 1,
+    "index": 26,
+    "chaptersCount": 22
+  }
+}

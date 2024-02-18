@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            container: {
+              center: true,
+              padding: '1rem',
+            },
+            colors: {},
+          },
+        },
+      }
+    </script>
+  </head>
+  <body>
+    <!-- ====== Navbar Section Start -->
+    <header
+      x-data="
+        {
+          navbarOpen: false,
+        }
+      "
+      class="absolute left-0 top-0 z-50 w-full">
+      <div class="container mx-auto">
+        <div class="relative -mx-4 flex items-center justify-between">
+          <div class="w-60 max-w-full px-4">
+            <a href="javascript:void(0)" class="block w-full py-5">
+              <img
+                src="assets/images/logo/logo.svg"
+                alt="logo"
+                class="block w-full dark:hidden" />
+              <img
+                src="assets/images/logo/logo-white.svg"
+                alt="logo"
+                class="hidden w-full dark:block" />
+            </a>
+          </div>
+          <div class="flex w-full items-center justify-between px-4">
+            <div>
+              <button
+                @click="navbarOpen = !navbarOpen"
+                :class="navbarOpen && 'navbarTogglerActive'"
+                id="navbarToggler"
+                class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-rose-500 focus:ring-2 lg:hidden">
+                <span
+                  class="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
+                <span
+                  class="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
+                <span
+                  class="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
+              </button>
+              <nav
+                x-transition
+                :class="!navbarOpen && 'hidden'"
+                id="navbarCollapse"
+                class="absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow transition-all dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:shadow-none xl:ml-11">
+                <ul class="block lg:flex">
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="flex py-2 text-base font-medium text-dark hover:text-rose-500 dark:text-white lg:ml-10 lg:inline-flex">
+                      Accueil
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="flex py-2 text-base font-medium text-dark hover:text-rose-500 dark:text-white lg:ml-10 lg:inline-flex">
+                      Prix
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="flex py-2 text-base font-medium text-dark hover:text-rose-500 dark:text-white lg:ml-10 lg:inline-flex">
+                      Features
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
+              <a
+                href="javascript:void(0)"
+                class="rounded-md bg-rose-500 px-7 py-3 text-base font-medium text-white hover:bg-rose-dark">
+                S'inscrire
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ====== Navbar Section End -->
+
+    <!-- ====== Hero Section Start -->
+    <div
+      class="relative bg-white pb-[110px] pt-[120px] dark:bg-slate-950 lg:pt-[150px]">
+      <div class="container mx-auto">
+        <div class="-mx-4 flex flex-wrap items-center">
+          <div class="w-full px-4 lg:w-5/12">
+            <div class="hero-content">
+              <h1
+                class="mb-5 text-4xl font-bold !leading-[1.208] text-dark dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl">
+                The Greatest <br />
+                Journey Of Online <br />
+                Payment.
+              </h1>
+              <p
+                class="mb-8 max-w-[480px] text-base text-gray-900 dark:text-gray-50">
+                With TailGrids, business and students thrive together. Business
+                can perfectly match their staffing to changing demand throughout
+                the dayed.
+              </p>
+              <ul class="flex flex-wrap items-center">
+                <li>
+                  <a
+                    href="javascript:void(0)"
+                    class="inline-flex items-center justify-center rounded-md bg-rose-500 px-6 py-3 text-center text-base font-medium text-white hover:bg-rose-dark lg:px-7">
+                    Commencez ici
+                  </a>
+                </li>
+              </ul>
+              <div class="clients pt-16">
+                <h6
+                  class="mb-6 flex items-center text-xs font-normal text-gray-900 dark:text-gray-50">
+                  Quelques techno de notre stack
+                  <span class="ml-3 inline-block h-px w-8 bg-body-color"></span>
+                </h6>
+                <div class="flex items-center gap-4 xl:gap-[50px]">
+                  <a
+                    href="javascript:void(0)"
+                    class="block py-3 w-8 h-8 text-gray-50">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-full h-full fill-current"
+                      viewBox="0 0 24 24">
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2">
+                        <path
+                          d="M6.306 8.711C3.704 9.434 2 10.637 2 12c0 2.21 4.477 4 10 4c.773 0 1.526-.035 2.248-.102m3.444-.609C20.295 14.567 22 13.363 22 12c0-2.21-4.477-4-10-4c-.773 0-1.526.035-2.25.102" />
+                        <path
+                          d="M6.305 15.287C5.629 17.902 5.82 19.98 7 20.66c1.913 1.105 5.703-1.877 8.464-6.66c.387-.67.733-1.339 1.036-2m1.194-3.284C18.371 6.1 18.181 4.02 17 3.34C15.087 2.235 11.297 5.217 8.536 10c-.387.67-.733 1.34-1.037 2" />
+                        <path
+                          d="M12 5.424C10.075 3.532 8.18 2.658 7 3.34C5.087 4.444 5.774 9.217 8.536 14c.386.67.793 1.304 1.212 1.896M12 18.574c1.926 1.893 3.821 2.768 5 2.086c1.913-1.104 1.226-5.877-1.536-10.66c-.375-.65-.78-1.283-1.212-1.897M11.5 12.866a1 1 0 1 0 1-1.732a1 1 0 0 0-1 1.732" />
+                      </g>
+                    </svg>
+                  </a>
+                  <a href="javascript:void(0)" class="block py-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-full h-full fill-current"
+                      viewBox="0 0 24 24">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 15V9l7.745 10.65A9 9 0 1 1 19 17.657M15 12V9" />
+                    </svg>
+                  </a>
+                  <a href="javascript:void(0)" class="block py-3">
+                    <img
+                      src="assets/images/brands/logitech.svg"
+                      alt="logitech" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hidden px-4 lg:block lg:w-1/12"></div>
+          <div class="w-full px-4 lg:w-6/12">
+            <div class="lg:ml-auto lg:text-right">
+              <div class="relative z-10 inline-block pt-11 lg:pt-0">
+                <img
+                  src="assets/images/hero/hero-image-01.png"
+                  alt="hero"
+                  class="max-w-full lg:ml-auto" />
+                <span class="absolute -bottom-8 -left-8 z-[-1] text-rose-500">
+                  <svg
+                    width="93"
+                    height="93"
+                    viewBox="0 0 93 93"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2.5" cy="2.5" r="2.5" fill="currentColor" />
+                    <circle cx="2.5" cy="24.5" r="2.5" fill="currentColor" />
+                    <circle cx="2.5" cy="46.5" r="2.5" fill="currentColor" />
+                    <circle cx="2.5" cy="68.5" r="2.5" fill="currentColor" />
+                    <circle cx="2.5" cy="90.5" r="2.5" fill="currentColor" />
+                    <circle cx="24.5" cy="2.5" r="2.5" fill="currentColor" />
+                    <circle cx="24.5" cy="24.5" r="2.5" fill="currentColor" />
+                    <circle cx="24.5" cy="46.5" r="2.5" fill="currentColor" />
+                    <circle cx="24.5" cy="68.5" r="2.5" fill="currentColor" />
+                    <circle cx="24.5" cy="90.5" r="2.5" fill="currentColor" />
+                    <circle cx="46.5" cy="2.5" r="2.5" fill="currentColor" />
+                    <circle cx="46.5" cy="24.5" r="2.5" fill="currentColor" />
+                    <circle cx="46.5" cy="46.5" r="2.5" fill="currentColor" />
+                    <circle cx="46.5" cy="68.5" r="2.5" fill="currentColor" />
+                    <circle cx="46.5" cy="90.5" r="2.5" fill="currentColor" />
+                    <circle cx="68.5" cy="2.5" r="2.5" fill="currentColor" />
+                    <circle cx="68.5" cy="24.5" r="2.5" fill="currentColor" />
+                    <circle cx="68.5" cy="46.5" r="2.5" fill="currentColor" />
+                    <circle cx="68.5" cy="68.5" r="2.5" fill="currentColor" />
+                    <circle cx="68.5" cy="90.5" r="2.5" fill="currentColor" />
+                    <circle cx="90.5" cy="2.5" r="2.5" fill="currentColor" />
+                    <circle cx="90.5" cy="24.5" r="2.5" fill="currentColor" />
+                    <circle cx="90.5" cy="46.5" r="2.5" fill="currentColor" />
+                    <circle cx="90.5" cy="68.5" r="2.5" fill="currentColor" />
+                    <circle cx="90.5" cy="90.5" r="2.5" fill="currentColor" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ====== Hero Section End -->
+  </body>
+</html>
