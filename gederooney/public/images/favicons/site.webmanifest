@@ -1,0 +1,66 @@
+{
+  "name": "Le blog de rony gedeon",
+  "short_name": "Gederooney",
+  "icons": [
+    {
+      "src": "/static/favicons/light-icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any",
+      "theme_color": "#ffffff"
+    },
+    {
+      "src": "/static/favicons/dark-icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any",
+      "theme_color": "#000000"
+    },
+    {
+      "src": "/static/favicons/light-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any",
+      "theme_color": "#ffffff"
+    },
+    {
+      "src": "/static/favicons/dark-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any",
+      "theme_color": "#000000"
+    },    
+    {
+      "src": "/static/favicons/light-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any",
+      "theme_color": "#ffffff"
+    },
+    {
+      "src": "/static/favicons/dark-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any",
+      "theme_color": "#000000"
+    },
+    {
+      "src": "/static/favicons/light-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any",
+      "theme_color": "#ffffff"
+    },
+    {
+      "src": "/static/favicons/dark-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any",
+      "theme_color": "#000000"
+    }
+  ],
+  "theme_color": "#0A1622",
+  "background_color": "#0A1622",
+  "display": "standalone"
+}
+
