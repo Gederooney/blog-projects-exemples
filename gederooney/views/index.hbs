@@ -58,7 +58,7 @@
   <body>
 
     <header
-      class='flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm absolute font-lexend'
+      class='absolute z-50 flex flex-wrap w-full text-sm md:justify-start md:flex-nowrap font-lexend'
     >
       <nav
         class='relative max-w-[85rem] w-full mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto container'
@@ -66,7 +66,7 @@
       >
         <div class='flex items-center justify-between'>
           <a
-            class='flex-none text-xl font-semibold dark:text-white'
+            class='flex-none text-xl font-semibold text-white'
             href='/'
             aria-label='Brand'
           >
@@ -124,12 +124,12 @@
           <div class='md:hidden'>
             <button
               type='button'
-              class='size-8 flex justify-center items-center text-sm font-semibold rounded-full border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+              class='flex items-center justify-center text-sm font-semibold text-gray-800 border border-gray-200 rounded-full size-8 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
               aria-controls='navbar-collapse-with-animation'
               aria-label='Toggle navigation'
             >
               <svg
-                class='hs-collapse-open:hidden flex-shrink-0 size-4'
+                class='flex-shrink-0 hs-collapse-open:hidden size-4'
                 xmlns='http://www.w3.org/2000/svg'
                 width='24'
                 height='24'
@@ -146,7 +146,7 @@
                   y2='12'
                 /><line x1='3' x2='21' y1='18' y2='18' /></svg>
               <svg
-                class='hs-collapse-open:block hidden flex-shrink-0 size-4'
+                class='flex-shrink-0 hidden hs-collapse-open:block size-4'
                 xmlns='http://www.w3.org/2000/svg'
                 width='24'
                 height='24'
@@ -162,10 +162,10 @@
         </div>
         <div
           id='navbar-collapse-with-animation'
-          class='hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block'
+          class='hidden overflow-hidden transition-all duration-300 hs-collapse basis-full grow md:block'
         >
           <div
-            class='flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7'
+            class='flex flex-col mt-5 gap-y-4 gap-x-0 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7'
           >
             <a class='font-medium text-gray-50 md:py-6' href='/'>Accueil</a>
             <a
@@ -179,7 +179,7 @@
             <a class='font-medium text-gray-50 md:py-6' href='#blog'>Blog</a>
 
             <a
-              class='flex items-center gap-x-2 font-medium text-gray-50 hover:text-blue-600 md:border-s md:border-gray-300 md:my-6 md:ps-6 dark:hover:text-blue-500'
+              class='flex items-center font-medium gap-x-2 text-gray-50 hover:text-blue-600 md:border-s md:border-gray-300 md:my-6 md:ps-6 dark:hover:text-blue-500'
               href='#contact'
             >
 
@@ -195,7 +195,7 @@
       class='flex bg-gradient-to-t from-[#141521] items-center relative to-[#141521]'
     >
       <div
-        class='inset-0 absolute'
+        class='absolute inset-0'
         style="background-image: url('/images/hero.svg');"
       ></div>
 
@@ -317,7 +317,7 @@
       <div class='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto'>
         <!-- Tab Nav -->
         <nav
-          class='max-w-6xl mx-auto grid sm:flex gap-y-px sm:gap-y-0 sm:gap-x-4'
+          class='grid max-w-6xl mx-auto sm:flex gap-y-px sm:gap-y-0 sm:gap-x-4'
           aria-label='Tabs'
           role='tablist'
         >
@@ -329,7 +329,7 @@
             role='tab'
           >
             <svg
-              class='flex-shrink-0 hidden sm:block size-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-white'
+              class='flex-shrink-0 hidden text-gray-200 sm:block size-7 hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 dark:text-white'
               xmlns='http://www.w3.org/2000/svg'
               width='24'
               height='24'
@@ -350,12 +350,12 @@
               /></svg>
             <span class='mt-5'>
               <span
-                class='hs-tab-active:text-blue-600 block font-semibold text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200'
+                class='block font-semibold text-gray-200 hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 dark:text-gray-200'
               >
                 Monétisation
               </span>
               <span
-                class='hidden lg:block mt-2 text-gray-800 dark:text-gray-200'
+                class='hidden mt-2 text-gray-200 lg:block'
               >
                 Je vous aide avec la Monétisation de vos pages
               </span>
@@ -370,7 +370,7 @@
             role='tab'
           >
             <svg
-              class='flex-shrink-0 hidden sm:block size-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-white'
+              class='flex-shrink-0 hidden text-gray-800 sm:block size-7 hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 dark:text-white'
               xmlns='http://www.w3.org/2000/svg'
               width='24'
               height='24'
@@ -385,10 +385,10 @@
               /></svg>
             <span class='mt-5'>
               <span
-                class='hs-tab-active:text-blue-600 block font-semibold text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200'
+                class='block font-semibold text-gray-800 hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 dark:text-gray-200'
               >Image de marque</span>
               <span
-                class='hidden lg:block mt-2 text-gray-800 dark:text-gray-200'
+                class='hidden mt-2 text-gray-200 lg:block'
               >
                 Je vous aide à créer et maintenir votre image de marque
               </span>
@@ -403,7 +403,7 @@
             role='tab'
           >
             <svg
-              class='flex-shrink-0 hidden sm:block size-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-white'
+              class='flex-shrink-0 hidden text-gray-800 sm:block size-7 hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 dark:text-white'
               xmlns='http://www.w3.org/2000/svg'
               width='24'
               height='24'
@@ -420,10 +420,10 @@
               /></svg>
             <span class='mt-5'>
               <span
-                class='hs-tab-active:text-blue-600 block font-semibold text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200'
+                class='block font-semibold text-gray-800 hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 dark:text-gray-200'
               >Consultation</span>
               <span
-                class='hidden lg:block mt-2 text-gray-800 dark:text-gray-200'
+                class='hidden mt-2 text-gray-200 lg:block'
               >J'offre mes services de consultant pour la gestion de votre
                 communauté</span>
             </span>
@@ -464,16 +464,16 @@
                   class='relative flex items-center max-w-[50rem] bg-white border-b border-gray-100 rounded-t-lg py-2 px-24'
                 >
                   <div
-                    class='flex space-x-1 absolute top-2/4 start-4 -translate-y-1'
+                    class='absolute flex space-x-1 -translate-y-1 top-2/4 start-4'
                   >
                     <span
-                      class='size-2 bg-gray-200 rounded-full dark:bg-gray-700'
+                      class='bg-gray-200 rounded-full size-2 dark:bg-gray-700'
                     ></span>
                     <span
-                      class='size-2 bg-gray-200 rounded-full dark:bg-gray-700'
+                      class='bg-gray-200 rounded-full size-2 dark:bg-gray-700'
                     ></span>
                     <span
-                      class='size-2 bg-gray-200 rounded-full dark:bg-gray-700'
+                      class='bg-gray-200 rounded-full size-2 dark:bg-gray-700'
                     ></span>
                   </div>
                   <div
@@ -483,7 +483,7 @@
 
                 <div class='bg-gray-800 rounded-b-lg'>
                   <img
-                    class='max-w-full h-auto rounded-b-lg'
+                    class='h-auto max-w-full rounded-b-lg'
                     src='https://preline.co//assets/img/mockups/img8.jpg'
                     alt='Image Description'
                   />
@@ -526,11 +526,11 @@
                   class='relative flex items-center max-w-[50rem] bg-gray-800 border-b border-gray-700 rounded-t-lg py-2 px-24'
                 >
                   <div
-                    class='flex space-x-1 absolute top-2/4 start-4 -translate-y-1'
+                    class='absolute flex space-x-1 -translate-y-1 top-2/4 start-4'
                   >
-                    <span class='size-2 bg-gray-700 rounded-full'></span>
-                    <span class='size-2 bg-gray-700 rounded-full'></span>
-                    <span class='size-2 bg-gray-700 rounded-full'></span>
+                    <span class='bg-gray-700 rounded-full size-2'></span>
+                    <span class='bg-gray-700 rounded-full size-2'></span>
+                    <span class='bg-gray-700 rounded-full size-2'></span>
                   </div>
                   <div
                     class='flex justify-center items-center size-full bg-gray-700 text-[.25rem] text-gray-200 rounded-sm sm:text-[.5rem]'
@@ -539,7 +539,7 @@
 
                 <div class='bg-gray-800 rounded-b-lg'>
                   <img
-                    class='max-w-full h-auto rounded-b-lg'
+                    class='h-auto max-w-full rounded-b-lg'
                     src='https://preline.co//assets/img/mockups/img10.jpg'
                     alt='Image Description'
                   />
@@ -582,16 +582,16 @@
                   class='relative flex items-center max-w-[50rem] bg-white border-b border-gray-100 rounded-t-lg py-2 px-24'
                 >
                   <div
-                    class='flex space-x-1 absolute top-2/4 start-4 -translate-y-1'
+                    class='absolute flex space-x-1 -translate-y-1 top-2/4 start-4'
                   >
                     <span
-                      class='size-2 bg-gray-200 rounded-full dark:bg-gray-700'
+                      class='bg-gray-200 rounded-full size-2 dark:bg-gray-700'
                     ></span>
                     <span
-                      class='size-2 bg-gray-200 rounded-full dark:bg-gray-700'
+                      class='bg-gray-200 rounded-full size-2 dark:bg-gray-700'
                     ></span>
                     <span
-                      class='size-2 bg-gray-200 rounded-full dark:bg-gray-700'
+                      class='bg-gray-200 rounded-full size-2 dark:bg-gray-700'
                     ></span>
                   </div>
                   <div
@@ -601,7 +601,7 @@
 
                 <div class='bg-gray-800 rounded-b-lg'>
                   <img
-                    class='max-w-full h-auto rounded-b-lg'
+                    class='h-auto max-w-full rounded-b-lg'
                     src='https://preline.co//assets/img/mockups/img12.jpg'
                     alt='Image Description'
                   />
@@ -618,9 +618,11 @@
     <!-- End Features -->
 
     <section class='py-20 bg-gray-100 sm:py-32'>
-      <div class='max-w-2xl mx-auto text-center pb-6 lg:pb-16'>
-        <h2 class='text-2xl font-bold sm:text-3xl md:text-4xl'>ils ont travaillé avec moi
-        <p class='mt-4 md:text-lg text-gray-600 dark:text-gray-400'>Voici ce que
+      <div class='max-w-2xl pb-6 mx-auto text-center lg:pb-16'>
+        <h2 class='text-2xl font-bold sm:text-3xl md:text-4xl'>ils ont travaillé
+          avec moi
+        </h2>
+        <p class='mt-4 text-gray-600 md:text-lg dark:text-gray-400'>Voici ce que
           penses les influenceurs comme toi qui on travaillé avec moi</p>
       </div>
       <div class='px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
@@ -862,31 +864,31 @@
     <!-- Card Blog -->
     <section id='blog'>
       <div class='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto'>
-        <div class='max-w-2xl mx-auto text-center pb-6 lg:pb-16'>
+        <div class='max-w-2xl pb-6 mx-auto text-center lg:pb-16'>
           <h2 class='text-2xl font-bold sm:text-3xl md:text-4xl'>Blog Sections</h2>
-          <p class='mt-4 md:text-lg text-gray-600 dark:text-gray-400'>Quickly
+          <p class='mt-4 text-gray-600 md:text-lg dark:text-gray-400'>Quickly
             get a project started with any of our examples ranging from using
             parts of the UI to custom components and layouts using Tailwind CSS.</p>
         </div>
         <!-- Grid -->
-        <div class='grid lg:grid-cols-2 lg:gap-y-16 gap-10'>
+        <div class='grid gap-10 lg:grid-cols-2 lg:gap-y-16'>
           <!-- Card -->
           <a
-            class='group rounded-xl overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+            class='overflow-hidden group rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
             href='#'
           >
             <div class='sm:flex'>
               <div
-                class='flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44'
+                class='relative flex-shrink-0 w-full overflow-hidden rounded-xl sm:w-56 h-44'
               >
                 <img
-                  class='group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl'
+                  class='absolute top-0 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 size-full start-0 rounded-xl'
                   src='https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
                   alt='Image Description'
                 />
               </div>
 
-              <div class='grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0'>
+              <div class='px-4 mt-4 grow sm:mt-0 sm:ms-6 sm:px-0'>
                 <h3
                   class='text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white'
                 >
@@ -897,7 +899,7 @@
                   Preline's innovative broadcast studio
                 </p>
                 <p
-                  class='mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium'
+                  class='inline-flex items-center mt-4 font-medium text-blue-600 gap-x-1 decoration-2 hover:underline'
                 >
                   Read more
                   <svg
@@ -920,21 +922,21 @@
 
           <!-- Card -->
           <a
-            class='group rounded-xl overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+            class='overflow-hidden group rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
             href='#'
           >
             <div class='sm:flex'>
               <div
-                class='flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44'
+                class='relative flex-shrink-0 w-full overflow-hidden rounded-xl sm:w-56 h-44'
               >
                 <img
-                  class='group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl'
+                  class='absolute top-0 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 size-full start-0 rounded-xl'
                   src='https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80'
                   alt='Image Description'
                 />
               </div>
 
-              <div class='grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0'>
+              <div class='px-4 mt-4 grow sm:mt-0 sm:ms-6 sm:px-0'>
                 <h3
                   class='text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white'
                 >
@@ -945,7 +947,7 @@
                   capabilities like badge printing and lead retrieval
                 </p>
                 <p
-                  class='mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium'
+                  class='inline-flex items-center mt-4 font-medium text-blue-600 gap-x-1 decoration-2 hover:underline'
                 >
                   Read more
                   <svg
@@ -968,21 +970,21 @@
 
           <!-- Card -->
           <a
-            class='group rounded-xl overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+            class='overflow-hidden group rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
             href='#'
           >
             <div class='sm:flex'>
               <div
-                class='flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44'
+                class='relative flex-shrink-0 w-full overflow-hidden rounded-xl sm:w-56 h-44'
               >
                 <img
-                  class='group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl'
+                  class='absolute top-0 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 size-full start-0 rounded-xl'
                   src='https://images.unsplash.com/photo-1567016526105-22da7c13161a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80'
                   alt='Image Description'
                 />
               </div>
 
-              <div class='grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0'>
+              <div class='px-4 mt-4 grow sm:mt-0 sm:ms-6 sm:px-0'>
                 <h3
                   class='text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white'
                 >
@@ -992,7 +994,7 @@
                   How to make objectives and key results work for your company
                 </p>
                 <p
-                  class='mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium'
+                  class='inline-flex items-center mt-4 font-medium text-blue-600 gap-x-1 decoration-2 hover:underline'
                 >
                   Read more
                   <svg
@@ -1015,21 +1017,21 @@
 
           <!-- Card -->
           <a
-            class='group rounded-xl overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+            class='overflow-hidden group rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
             href='#'
           >
             <div class='sm:flex'>
               <div
-                class='flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44'
+                class='relative flex-shrink-0 w-full overflow-hidden rounded-xl sm:w-56 h-44'
               >
                 <img
-                  class='group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl'
+                  class='absolute top-0 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 size-full start-0 rounded-xl'
                   src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
                   alt='Image Description'
                 />
               </div>
 
-              <div class='grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0'>
+              <div class='px-4 mt-4 grow sm:mt-0 sm:ms-6 sm:px-0'>
                 <h3
                   class='text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white'
                 >
@@ -1039,7 +1041,7 @@
                   Six approaches to bringing your People strategy to life
                 </p>
                 <p
-                  class='mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium'
+                  class='inline-flex items-center mt-4 font-medium text-blue-600 gap-x-1 decoration-2 hover:underline'
                 >
                   Read more
                   <svg
@@ -1071,7 +1073,7 @@
       id='contact'
     >
       <div class='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto'>
-        <div class='max-w-2xl lg:max-w-5xl mx-auto'>
+        <div class='max-w-2xl mx-auto lg:max-w-5xl'>
           <div class='text-center'>
             <h1 class='text-3xl font-bold text-gray-50 sm:text-4xl'>
               Parlons-nous
@@ -1081,10 +1083,10 @@
             </p>
           </div>
 
-          <div class='mt-12 grid items-center lg:grid-cols-2 gap-6 lg:gap-16'>
+          <div class='grid items-center gap-6 mt-12 lg:grid-cols-2 lg:gap-16'>
             <!-- Card -->
             <div
-              class='flex flex-col border border-gray-50/10 rounded-xl p-4 sm:p-6 lg:p-8'
+              class='flex flex-col p-4 border border-gray-50/10 rounded-xl sm:p-6 lg:p-8'
             >
               <h2
                 class='mb-8 text-xl font-semibold text-gray-800 dark:text-gray-200'
@@ -1095,14 +1097,14 @@
               <form>
                 <div class='grid gap-4'>
                   <!-- Grid -->
-                  <div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                  <div class='grid grid-cols-1 gap-4 sm:grid-cols-2'>
                     <div>
                       <label for='' class='sr-only'>Nom</label>
                       <input
                         type='text'
                         name=''
                         id=''
-                        class='py-3 px-4 block w-full border border-gray-50/10 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg-transparent dark:focus:ring-gray-600'
+                        class='block w-full px-4 py-3 text-sm bg-transparent border rounded-lg border-gray-50/10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:ring-gray-600'
                         placeholder='Nom'
                       />
                     </div>
@@ -1113,20 +1115,20 @@
                         type='text'
                         name=''
                         id=''
-                        class='py-3 px-4 block w-full border border-gray-50/10 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg-transparent dark:focus:ring-gray-600'
+                        class='block w-full px-4 py-3 text-sm bg-transparent border rounded-lg border-gray-50/10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:ring-gray-600'
                         placeholder='Prénom'
                       />
                     </div>
                   </div>
                   <!-- End Grid -->
-                  <div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                  <div class='grid grid-cols-1 gap-4 sm:grid-cols-2'>
                     <div>
                       <label for='tel' class='sr-only'>Téléphone</label>
                       <input
                         type='text'
                         name=''
                         id=''
-                        class='py-3 px-4 block w-full border border-gray-50/10 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg-transparent dark:focus:ring-gray-600'
+                        class='block w-full px-4 py-3 text-sm bg-transparent border rounded-lg border-gray-50/10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:ring-gray-600'
                         placeholder='Téléphone Whatsapp'
                       />
                     </div>
@@ -1136,7 +1138,7 @@
                         type='text'
                         name=''
                         id=''
-                        class='py-3 px-4 block w-full border border-gray-50/10 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg-transparent dark:focus:ring-gray-600'
+                        class='block w-full px-4 py-3 text-sm bg-transparent border rounded-lg border-gray-50/10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:ring-gray-600'
                         placeholder='Email'
                       />
                     </div>
@@ -1148,7 +1150,7 @@
                       type='text'
                       name=''
                       id=''
-                      class='py-3 px-4 block w-full border border-gray-50/10 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg-transparent dark:focus:ring-gray-600'
+                      class='block w-full px-4 py-3 text-sm bg-transparent border rounded-lg border-gray-50/10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:ring-gray-600'
                       placeholder='Lien de Page facebook'
                     />
                   </div>
@@ -1159,17 +1161,17 @@
                       id=''
                       name=''
                       rows='4'
-                      class='py-3 px-4 block w-full border border-gray-50/10 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg-transparent dark:focus:ring-gray-600'
+                      class='block w-full px-4 py-3 text-sm bg-transparent border rounded-lg border-gray-50/10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:ring-gray-600'
                       placeholder='Details'
                     ></textarea>
                   </div>
                 </div>
                 <!-- End Grid -->
 
-                <div class='mt-4 grid'>
+                <div class='grid mt-4'>
                   <button
                     type='submit'
-                    class='w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+                    class='inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
                   >
                     Soumettre
                   </button>
@@ -1186,7 +1188,7 @@
 
             <div class='divide-y divide-gray-200 dark:divide-gray-800'>
               <!-- Icon Block -->
-              <div class='flex gap-x-7 py-6'>
+              <div class='flex py-6 gap-x-7'>
                 <svg
                   class='flex-shrink-0 size-6 mt-1.5 text-gray-800 dark:text-gray-200'
                   xmlns='http://www.w3.org/2000/svg'
@@ -1209,7 +1211,7 @@
                     important, je vous réponds aussitôt que possible
                   </p>
                   <a
-                    class='mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+                    class='inline-flex items-center mt-2 text-sm font-medium text-gray-600 gap-x-2 hover:text-gray-800 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
                     href='#'
                   >
                     Merci
@@ -1234,7 +1236,7 @@
               <!-- End Icon Block -->
 
               <!-- Icon Block -->
-              <div class='flex gap-x-7 py-6'>
+              <div class='flex py-6 gap-x-7'>
                 <svg
                   class='flex-shrink-0 size-6 mt-1.5 text-gray-800 dark:text-gray-200'
                   xmlns='http://www.w3.org/2000/svg'
@@ -1258,7 +1260,7 @@
                   <p class='mt-1 text-sm text-gray-500'>Voici les questions que
                     les gens me posent fréquement</p>
                   <a
-                    class='mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+                    class='inline-flex items-center mt-2 text-sm font-medium text-gray-600 gap-x-2 hover:text-gray-800 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
                     href='#'
                   >
                     Voir notre FAQ
@@ -1283,7 +1285,7 @@
               <!-- End Icon Block -->
 
               <!-- Icon Block -->
-              <div class='flex gap-x-7 py-6'>
+              <div class='flex py-6 gap-x-7'>
                 <svg
                   class='flex-shrink-0 size-6 mt-1.5 text-gray-800 dark:text-gray-200'
                   xmlns='http://www.w3.org/2000/svg'
@@ -1310,7 +1312,7 @@
                   <p class='mt-1 text-sm text-gray-500'>Écrivez moi par courriel
                     pour toutes vos questions</p>
                   <a
-                    class='mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+                    class='inline-flex items-center mt-2 text-sm font-medium text-gray-600 gap-x-2 hover:text-gray-800 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
                     href='mailto:rony@gederooney.me'
                   >
                     Questions Speécifiques
@@ -1335,7 +1337,7 @@
               <!-- End Icon Block -->
 
               <!-- Icon Block -->
-              <div class='flex gap-x-7 py-6'>
+              <div class='flex py-6 gap-x-7'>
                 <svg
                   class='flex-shrink-0 size-6 mt-1.5 text-gray-800 dark:text-gray-200'
                   xmlns='http://www.w3.org/2000/svg'
@@ -1359,7 +1361,7 @@
                   <p class='mt-1 text-sm text-gray-500'>Si vous souhaitez
                     m'écrire, utilisez:</p>
                   <a
-                    class='mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
+                    class='inline-flex items-center mt-2 text-sm font-medium text-gray-600 gap-x-2 hover:text-gray-800 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
                     href='mailto:rony@gederooney.me'
                   >
                     rony@gederooney.me
@@ -1374,14 +1376,12 @@
     </section>
     <!-- End Contact Us -->
 
-    <footer
-      class='w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-gray-950'
-    >
+    <footer class='w-full bg-gray-950'>
       <!-- Grid -->
-      <div class='text-center'>
+      <div class='text-center max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto'>
         <div class=''>
           <a
-            class='flex-none text-xl font-semibold text-gray-50 dark:focus:outline-none dark:focus:ring-1 mx-auto'
+            class='flex-none mx-auto text-xl font-semibold text-gray-50 dark:focus:outline-none dark:focus:ring-1'
             href='#'
             aria-label='Brand'
           >
@@ -1452,7 +1452,7 @@
         <!-- Social Brands -->
         <div class='mt-3 space-x-2'>
           <a
-            class='inline-flex justify-center items-center size-10 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:hover:bg-gray-800'
+            class='inline-flex items-center justify-center text-center text-gray-500 transition rounded-full size-10 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:hover:bg-gray-800'
             href='#'
           >
             <svg
@@ -1469,7 +1469,7 @@
             </svg>
           </a>
           <a
-            class='inline-flex justify-center items-center size-10 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:hover:bg-gray-800'
+            class='inline-flex items-center justify-center text-center text-gray-500 transition rounded-full size-10 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:hover:bg-gray-800'
             href='#'
           >
             <svg
@@ -1486,7 +1486,7 @@
             </svg>
           </a>
           <a
-            class='inline-flex justify-center items-center size-10 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:hover:bg-gray-800'
+            class='inline-flex items-center justify-center text-center text-gray-500 transition rounded-full size-10 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:hover:bg-gray-800'
             href='#'
           >
             <svg
@@ -1503,7 +1503,7 @@
             </svg>
           </a>
           <a
-            class='inline-flex justify-center items-center size-10 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:hover:bg-gray-800'
+            class='inline-flex items-center justify-center text-center text-gray-500 transition rounded-full size-10 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:hover:bg-gray-800'
             href='#'
           >
             <svg

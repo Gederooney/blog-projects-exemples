@@ -86,13 +86,17 @@ class Wheel {
 
   constructor(containerElementId) {
     this.container = document.getElementById(containerElementId)
+    this.combinaisonType = 'complementary'
 
     this.addStyle()
     this.createElements()
     this.createCombinaisonElements()
+    this.combinaisonElementsCoordinates =
+      this.getCombinaisonElementsCoordinates()
+    this.updateCombinaisonPosition()
     this.createControl()
 
-    this.combinaisonType = 'complementary'
+    this.createPalette()
 
     this.handleMouseUp = this.handleMouseUp.bind(this)
     this.handleTouchEnd = this.handleTouchEnd.bind(this)
@@ -300,6 +304,19 @@ class Wheel {
 			top: 50%;
 			left: 20%;
 		}
+
+    #pallette{
+      display: flex;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      flex-direction: row;
+      max-width: 20rem;
+      margin: auto
+    }
+    #pallette > div{
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
 		`
 
     document.head.appendChild(style)
@@ -337,6 +354,8 @@ class Wheel {
     this.wheel = wheel
     this.lightness = lightness
     this.picker = new Picker(picker)
+    this.picker.coordinates = { x: 0, y: -1 }
+    this.picker.position = { letf: 50, top: 100 }
     this.lightnessPicker = new Picker(lightnesspicker)
     this.body = document.body
     this.color = chroma('00ffff')
@@ -592,14 +611,6 @@ class Wheel {
     return
   }
 
-
-
-
-
-
-
-
-	
   handleMouseUp(event) {
     this.isDragging = false
     this.isDraggingLightness = false
@@ -647,6 +658,7 @@ class Wheel {
         this.getCombinaisonElementsCoordinates()
       this.updateCombinaisonPosition()
     }
+    this.createPalette()
   }
   createControl() {
     const display = document.createElement('div')
@@ -713,6 +725,26 @@ class Wheel {
     control.appendChild(combinaison)
 
     this.container.appendChild(control)
+
+    const palletteDiv = document.createElement('div')
+    palletteDiv.id = 'pallette'
+
+    this.container.appendChild(palletteDiv)
+    this.palletteDiv = palletteDiv
+  }
+
+  createPalette() {
+    const width = 100 / (1 + this.combinaisonElementsCoordinates.length)
+    let html = `<div style="width:${width}%; height:50px;">
+    <span className="" style="background-color:${this.color}; display: block; width:100%; height: 100%;"></span>
+    </div>`
+    for (let el of this.combinaisonElementsCoordinates) {
+      const hsl = Color.coordinatesToHsl(el, this.lightnessPicker)
+      html += `<div style="width:${width}%; height:50px;">
+    <span className="block h-10" style="background-color:hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%); display: block; width:100%; height: 100%;"></span>
+    </div>`
+    }
+    this.palletteDiv.innerHTML = html
   }
 
   handleSelectChange(event) {
@@ -737,6 +769,7 @@ class Wheel {
     this.combinaisonElementsCoordinates =
       this.getCombinaisonElementsCoordinates()
     this.updateCombinaisonPosition()
+    this.createPalette()
   }
 
   handleInput(event) {

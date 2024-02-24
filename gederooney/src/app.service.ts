@@ -3,7 +3,7 @@ import * as fs from 'fs';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
+  getHello() {
     const content = fs.readFileSync('index.html', 'utf-8');
     return content;
   }

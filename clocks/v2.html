@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                50: '#DBE9FA',
+                100: '#B7D2F5',
+                200: '#70A5EB',
+                300: '#2878E1',
+                400: '#1653A1',
+                500: '#0C2D57',
+                600: '#0A2548',
+                700: '#071C36',
+                800: '#051224',
+                900: '#020912',
+                950: '#010509',
+              },
+              orange: {
+                50: '#FFF0EB',
+                100: '#FEE1D7',
+                200: '#FEC2AF',
+                300: '#FDA486',
+                400: '#FD865E',
+                500: '#FC6736',
+                600: '#F13F04',
+                700: '#B52F03',
+                800: '#791F02',
+                900: '#3C1001',
+                950: '#1E0800',
+              },
+              peach: {
+                50: '#FFF5F5',
+                100: '#FFF0F0',
+                200: '#FFE0E0',
+                300: '#FFD1D1',
+                400: '#FFC2C2',
+                500: '#FFB0B0',
+                600: '#FF5C5C',
+                700: '#FF0505',
+                800: '#AD0000',
+                900: '#570000',
+                950: '#290000',
+              },
+              gray: {
+                50: '#FDFCFC',
+                100: '#FDFCFC',
+                200: '#F8F7F7',
+                300: '#F6F4F4',
+                400: '#F1EEEE',
+                500: '#EFECEC',
+                600: '#C2B7B7',
+                700: '#988585',
+                800: '#665656',
+                900: '#352C2C',
+                950: '#191515',
+              },
+            },
+            fontFamily: { lexend: ["'Lexend'", 'sans-serif'] },
+          },
+        },
+      }
+    </script>
+    <!-- https://images.pexels.com/photos/3293148/pexels-photo-3293148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 -->
+  </head>
+  <body class="font-send">
+    <div
+      class="flex-col h-screen max-w-[35rem] mx-auto bg-gradient-to-b from-navy-500 to-navy-800">
+      <div class="relative flex flex-col w-full px-16 aspect-video">
+        <div
+          class="absolute h-40 bg-gradient-to-r from-orange-500 to-navy-500 aspect-square left-[6%] top-1/2 -translate-y-1/3 z-[1] blur-xl opacity-50"></div>
+
+        <div
+          class="absolute h-28 rounded-full bg-peach-500 aspect-square right-[6%] top-1/2 -translate-y-2/3 z-[1] blur-xl opacity-50"></div>
+        <div
+          class="relative w-full h-24 m-auto z-[2]"
+          style="
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+          ">
+          <div
+            class="flex items-center justify-between w-full px-2 text-gray-500">
+            <div class="flex-1 text-center">
+              <span class="block font-black text-7xl" id="hour">00</span>
+              <span class="block font-medium">Heures</span>
+            </div>
+            <span class="inline-block w-1">:</span>
+            <div class="flex-1 text-center">
+              <span class="block font-black text-7xl" id="minutes">18</span>
+              <span class="block font-medium">Minutes</span>
+            </div>
+            <span class="inline-block w-1">:</span>
+            <div class="flex-1 text-center">
+              <span class="block font-black text-7xl" id="seconds">00</span>
+              <span class="block font-medium">Secondes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 w-full">
+        <img src="./code2.png" alt="" />
+      </div>
+    </div>
+    <script src="./v2.js"></script>
+  </body>
+</html>
