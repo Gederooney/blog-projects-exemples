@@ -14,8 +14,12 @@
   "dependencies": {
     "chroma-js": "^2.4.2",
     "color": "^4.2.3",
+    "color-harmony": "^0.3.0",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "nodemon": "^3.0.1"
+    "material-icons-list": "^1.1.2",
+    "nodemon": "^3.0.1",
+    "pigmentjs": "^0.3.3",
+    "utility-color-palette-generator": "^1.0.2"
   }
 }

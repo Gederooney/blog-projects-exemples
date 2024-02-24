@@ -68,22 +68,51 @@
     </section>
 
     <section>
-      <div class="max-w-6xl mx-auto my-16">
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <% gradients.map((gradient) => { %>
-          <div
-            class="w-40 rounded-md h-20 shrink-0 grow-0"
-            style="
-              background: linear-gradient(
-                to right,
-                <%- `${gradient[0]},
-                ${gradient[1]},
-                ${gradient[2]},
-                ${gradient[3]},
-                ${gradient[4]} ` %>
-              );
-            "
-          ></div>
+      <div class="max-w-2xl mx-auto my-16">
+        <div class="flex flex-wrap items-center justify-between my-16">
+          <% complementaryColors.map((shade) => { %>
+          <div class="text-center">
+            <div
+              class="w-16 rounded-md h-16 shrink-0 grow-0"
+              style="background-color: <%= shade %>"
+            ></div>
+            <span class="text-xs font-light"> <%= shade %> </span>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="max-w-2xl mx-auto my-16">
+        <div class="flex flex-wrap items-center justify-between my-16">
+          <% analogousColors.map((shade) => { %>
+          <div class="text-center">
+            <div
+              class="w-16 rounded-md h-16 shrink-0 grow-0"
+              style="background-color: <%= shade %>"
+            ></div>
+            <span class="text-xs font-light"> <%= shade %> </span>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+   
+
+
+    <section>
+      <div class="max-w-2xl mx-auto my-16">
+        <div class="flex flex-wrap items-center justify-between my-16">
+          <% triadic.map((shade) => { %>
+          <div class="text-center">
+            <div
+              class="w-16 rounded-md h-16 shrink-0 grow-0"
+              style="background-color: <%= shade %>"
+            ></div>
+            <span class="text-xs font-light"> <%= shade %> </span>
+          </div>
           <% }) %>
         </div>
       </div>

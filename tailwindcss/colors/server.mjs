@@ -4,11 +4,17 @@ import chroma from "chroma-js";
 import { fileURLToPath } from "url";
 import path from "path";
 import ejs from "ejs";
+import { all, iconsLength } from "material-icons-list";
+import fs from "node:fs";
+import comp from "complementary-colors";
+import { Harmonizer } from "color-harmony";
+import Pigment from "pigmentjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+const harmonizer = new Harmonizer();
 
 app.engine("html", ejs.renderFile);
 app.set("view engine", "html");
@@ -23,43 +29,29 @@ app.get("/search", (req, res, next) => {
   try {
     const color = new Color(q);
 
+    const base = Pigment.Pigment(color.hex());
+
+    const complementaryColors = [base.complementary().hex];
+
+    const analogousColors = base.monochrome(5).map(c => c.hex);
+
+    const tetradicColors = harmonizer.harmonize(color.hex(), "tetradic");
+    const triadic = base.triad().map(c => c.hex);
+
+    const square = harmonizer.harmonize(color.hex(), "neutral");
+
     const shades = makeShadesHSL(color.hsl().array(), 30);
     const shadesHex = shades.map(hsl => Color.hsl(hsl).hex());
     const shadesChromaHex = shadesChroma(color.hex());
 
-    // Exemple d'utilisation avec cinq couleurs hexadécimales
-    const inputColors = generateComplementaryColors(chroma(color.hex()));
-    const analogousColors = generateAnalogousColors(chroma(color.hex()));
-    const tetradicColors = generateTetradicColors(chroma(color.hex()));
-
-    const allColorCombinations = generateAllCombinationsWithOrder(inputColors);
-    const analogousColorCombinations =
-      generateAllCombinationsWithOrder(analogousColors);
-
-    const gradients = allColorCombinations.map(combination => {
-      return chroma.scale(combination).mode("lab").colors(5);
-    });
-
-    gradients.push(
-      ...analogousColorCombinations.map(combination => {
-        return chroma.scale(combination).mode("lab").colors(5);
-      })
-    );
-
-    gradients.push(
-      ...generateAllCombinations2(tetradicColors).map(combination => {
-        return chroma.scale(combination).mode("lab").colors(5);
-      })
-    );
-
-    console.log(gradients);
-
-    res.render("search", {
+    return res.render("search", {
       color: color.hex(),
       shades: shadesHex,
       query: q,
       shadesChroma: shadesChromaHex,
-      gradients
+      complementaryColors,
+      analogousColors,
+      triadic
     });
   } catch (e) {
     console.log(e.message);
@@ -74,11 +66,11 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  res.status(500).send("Something went wrong");
+  res.status(500).send(err.message);
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(8080, () => {
+  console.log("Server is running on port 8080");
 });
 
 function makeShadesHSL(hslArray, stepsCount) {
@@ -100,7 +92,7 @@ function shadesChroma(color) {
 
   const shades = chroma
     .scale([whitest, chromaColor, blackest])
-    .mode("lab")
+    .mode('lch')
     .colors(30);
   return shades;
 }
@@ -155,7 +147,7 @@ function generateAllCombinations2(arr) {
   return combinations;
 }
 
-const generateTetradicColors = (color) => {
+const generateTetradicColors = color => {
   const numberOfColors = 4; // Nombre de couleurs tétradriques à générer
 
   const baseHue = color.get("hsl.h"); // Teinte de la couleur de base

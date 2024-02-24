@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            boxShadow: {
+              oauthBtn:
+                'inset -2px -2px 8px 0px rgba(0, 0, 0, 0.25), 2px 2px 8px 0px rgba(0, 0, 0, 0.25)',
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body class="flex min-h-screen bg-gray-50">
+    <section class="w-[350px] m-auto p-4 bg-white rounded-md shadow space-y-8">
+      <div
+        class="relative w-full p-3 m-auto rounded-full cursor-pointer bg-gradient-to-b from-black via-cyan-600 to-cyan-50"
+        id="lightness">
+        <button
+          id="lightnesspicker"
+          class="absolute w-4 -translate-x-1/2 -translate-y-1/2 bg-white border-black rounded-full shadow-[1px_1px_2px_1px_#00000040] top-1/2 aspect-square left-full touch-none"></button>
+        <div
+          class="w-full p-2 m-auto bg-white rounded-full pointer-events-auto">
+          <div
+            id="wheel"
+            class="relative w-full m-auto rounded-full cursor-pointer max-w-80 aspect-square">
+            <button
+              id="picker"
+              class="absolute w-5 h-5 -translate-x-1/2 -translate-y-1/2 bg-transparent rounded-full border-[5px] top-1/2 left-1/2 touch-none border-white shadow-[2px_2px_4px_2px_#00000040]"></button>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-8">
+        <div class="">
+          <span class="text-xs font-light text-gray-300">
+            1.Choisissez une couleur
+          </span>
+          <div class="flex flex-row gap-2">
+            <span
+              class="block w-12 h-12 rounded-full shrink-0 grow-0 bg-cyan-500"
+              id="display"></span>
+            <div class="flex-1 px-4 py-1">
+              <input
+                type="text"
+                class="w-full h-full text-center border"
+                value="#ff00ff"
+                id="colorInput" />
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <span class="text-xs font-light text-gray-300">2.Combinaison</span>
+          <div class="w-full border h-11">
+            <select name="" id="combinaison" class="w-full h-full px-2">
+              <option value="complementary">Complémentaire</option>
+              <option value="monochromatic">Monochrome</option>
+              <option value="analogous">Analogue</option>
+              <option value="triadic">Triadrique</option>
+              <option value="tetradic">Tétraédrique</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"
+      integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+      class Color {
+        constructor(coordinates) {
+          this.calculateColor(coordinates)
+        }
+
+        static getHue({ x, y }) {
+          const angleRad = Math.atan2(y, x)
+          let angleDeg = (angleRad * 180) / Math.PI
+
+          if (angleDeg < 0) {
+            angleDeg += 360
+          }
+
+          angleDeg = (360 - angleDeg + 90) % 360
+          return angleDeg
+        }
+
+        static getSaturation({ x, y }) {
+          const saturation = Math.sqrt(x * x + y * y)
+          return saturation * 100
+        }
+
+        static coordinatesToHsl(picker, lightness) {
+          const hue = this.getHue(picker.coordinates)
+          const saturation = this.getSaturation(picker.coordinates)
+          return [hue, saturation, ((1 - lightness.coordinates.y) / 2) * 100]
+        }
+      }
+
+      class Picker {
+        constructor({ element }) {
+          this.element = element
+          this.init()
+          this._position = { left: 50, top: 50 }
+          this._coordinates = { x: 0, y: 0 }
+        }
+        init() {
+          this.element.style.pointerEvents = 'none'
+          this.element.style.touchAction = 'none'
+        }
+        set position(position) {
+          this.element.style.top = `${position.top}%`
+          this.element.style.left = `${position.left}%`
+          this._position = {
+            left: position.left,
+            top: position.top,
+          }
+        }
+        get position() {
+          return this._position
+        }
+
+        set coordinates(coordinates) {
+          this._coordinates = coordinates
+        }
+
+        get coordinates() {
+          return this._coordinates
+        }
+
+        resetLightness() {
+          if (this.coordinates.x < 0) {
+            this.position = { left: 0, top: 50 }
+            this.coordinates = { x: -1, y: 0 }
+            return
+          }
+          this.position = { left: 100, top: 50 }
+          this.coordinates = { x: 1, y: 0 }
+        }
+      }
+
+      class Controls {
+        constructor({ input, select }) {
+          this.input = input
+          this.select = select
+
+          this.combinaisonType = 'complementary'
+
+          this.handleKeyDown = this.handleKeyDown.bind(this)
+          this.handleBlur = this.handleBlur.bind(this)
+          this.handleFocus = this.handleFocus.bind(this)
+
+          this.initControls()
+        }
+
+        handleKeyDown(event) {
+          if (event.key === 'Backspace' && this.input.value === '#') {
+            event.preventDefault()
+          }
+        }
+
+        handleFocus() {
+          if (this.input.value === '') {
+            this.input.value = '#'
+          }
+        }
+
+        handleBlur(event) {
+          // Ensure '#' is present when the field loses focus
+          if (this.input.value === '') {
+            this.input.value = '#'
+          }
+        }
+
+        initControls() {
+          this.input.addEventListener('keydown', this.handleKeyDown)
+          this.input.addEventListener('blur', this.handleBlur)
+          this.input.addEventListener('focus', this.handleFocus)
+        }
+      }
+
+      class Wheel extends Controls {
+        isDragging = false
+        mode = undefined
+        currentPicker = undefined
+        currentColorHsl = {
+          h: 0,
+          s: 0,
+          l: 0,
+        }
+        combinaisonElements = []
+        constructor({
+          picker,
+          element,
+          lightnessElement,
+          lightnessPicker,
+          controls,
+        }) {
+          super(controls)
+
+          this.picker = new Picker(picker)
+          this.lightnessPicker = new Picker(lightnessPicker)
+          this.element = element
+          this.lightnessElement = lightnessElement
+          this.body = document.body
+          this.color = chroma('00ffff')
+
+          this.createCombinaisonElements()
+
+          this.handleMouseUp = this.handleMouseUp.bind(this)
+          this.handleMouse = this.handleMouse.bind(this)
+
+          this.handleTouch = this.handleTouch.bind(this)
+          this.handleTouchEnd = this.handleTouchEnd.bind(this)
+
+          this.handleSelectChange = this.handleSelectChange.bind(this)
+          this.handleInput = this.handleInput.bind(this)
+        }
+
+        get isDragging() {
+          return this.isDragging
+        }
+
+        set isDragging(value) {
+          this.isDragging = value
+        }
+
+        getWheelBg() {
+          return `radial-gradient(
+                                     circle at 50% 0%,
+                                     hsla(10, 100%, 50%, 0.7) 0%,
+                                     hsla(10, 0%, 50%, 0) 43%
+                                   ),
+                                   radial-gradient(circle at 69.1% 3.8%, hsla(32.5, 100%, 50%, 0.7) 0%, hsla(32.5, 0%, 50%, 0) 43%),
+                                   radial-gradient(circle at 85.4% 14.6%, hsla(55, 100%, 50%, 0.7) 0%, hsla(55, 0%, 50%, 0) 43%),
+                                   radial-gradient(
+                                     circle at 96.2% 30.9%,
+                                     hsla(77.5, 100%, 50%, 0.7) 0%,
+                                     hsla(77.5, 0%, 50%, 0) 43%
+                                   ),
+                                   radial-gradient(circle at 100% 50%, hsla(100, 100%, 50%, 0.7) 0%, hsla(100, 0%, 50%, 0) 43%),
+                                   radial-gradient(
+                                     circle at 96.2% 69.1%,
+                                     hsla(122.5, 100%, 50%, 0.7) 0%,
+                                     hsla(122.5, 0%, 50%, 0) 43%
+                                   ),
+                                   radial-gradient(circle at 85.4% 85.4%, hsla(145, 100%, 50%, 0.7) 0%, hsla(145, 0%, 50%, 0) 43%),
+                                   radial-gradient(
+                                     circle at 69.1% 96.2%,
+                                     hsla(167.5, 100%, 50%, 0.7) 0%,
+                                     hsla(167.5, 0%, 50%, 0) 43%
+                                   ),
+                                   radial-gradient(circle at 50% 100%, hsla(190, 100%, 50%, 0.7) 0%, hsla(190, 0%, 50%, 0) 43%),
+                                   radial-gradient(
+                                     circle at 30.9% 96.2%,
+                                     hsla(212.5, 100%, 50%, 0.7) 0%,
+                                     hsla(212.5, 0%, 50%, 0) 43%
+                                   ),
+                                   radial-gradient(circle at 14.6% 85.4%, hsla(235, 100%, 50%, 0.7) 0%, hsla(235, 0%, 50%, 0) 43%),
+                                   radial-gradient(
+                                     circle at 3.8% 69.1%,
+                                     hsla(257.5, 100%, 50%, 0.7) 0%,
+                                     hsla(257.5, 0%, 50%, 0) 43%
+                                   ),
+                                   radial-gradient(circle at 0% 50%, hsla(280, 100%, 50%, 0.7) 0%, hsla(280, 0%, 50%, 0) 43%),
+                                   radial-gradient(
+                                     circle at 3.8% 30.9%,
+                                     hsla(302.5, 100%, 50%, 0.7) 0%,
+                                     hsla(302.5, 0%, 50%, 0) 43%
+                                   ),
+                                   radial-gradient(circle at 14.6% 14.6%, hsla(325, 100%, 50%, 0.7) 0%, hsla(325, 0%, 50%, 0) 43%),
+                                   radial-gradient(
+                                     circle at 30.9% 3.8%,
+                                     hsla(347.5, 100%, 50%, 0.7) 0%,
+                                     hsla(347.5, 0%, 50%, 0) 43%
+                                   ),
+                                   hsla(0, 0%, 50%, 1)`
+        }
+
+        getRelativeMousePosition(clientX, clientY) {
+          const x = clientX - this.sizes.left
+          const y = clientY - this.sizes.top
+
+          return { x, y }
+        }
+
+        getPositionNormalizedCoordinates(position) {
+          /*
+           * Repere: pour obtenir les position
+           * dans le repere ou le centre
+           * le centre du cercle chromatique est le centre
+           * du repere il faut: x = x - w/2, y = h/2 - y
+           */
+          return {
+            x: (position.x - this.sizes.width / 2) / (this.sizes.width / 2),
+            y: (this.sizes.height / 2 - position.y) / (this.sizes.height / 2),
+          }
+        }
+
+        getPosition(mousePosition) {
+          const left = (mousePosition.x * 100) / this.sizes.width
+          const top = (mousePosition.y * 100) / this.sizes.height
+          return { left, top }
+        }
+
+        getPositionFromNormalizedCoordinates(normalizeCoordinates) {
+          const normalizedTop =
+            normalizeCoordinates.y > 0
+              ? 1 - normalizeCoordinates.y
+              : 1 + -normalizeCoordinates.y
+          const normalizedLeft =
+            normalizeCoordinates.x > 0
+              ? 1 + normalizeCoordinates.x
+              : 1 - -normalizeCoordinates.x
+
+          const top = (normalizedTop * 100) / 2
+          const left = (normalizedLeft * 100) / 2
+
+          return { top, left }
+        }
+
+        getOppositeCoordinates({ x, y }) {
+          return { x: -x, y: -y }
+        }
+
+        pointIsInCercle(normalizeCoordinates) {
+          // distance to center
+          const d = Math.sqrt(
+            normalizeCoordinates.x * normalizeCoordinates.x +
+              normalizeCoordinates.y * normalizeCoordinates.y
+          )
+
+          return d <= 1
+        }
+
+        findIntersectionPoint(normalizeCoordinate) {
+          // distance to center
+          const d = Math.sqrt(
+            normalizeCoordinate.x * normalizeCoordinate.x +
+              normalizeCoordinate.y * normalizeCoordinate.y
+          )
+
+          const x = normalizeCoordinate.x / d
+          const y = normalizeCoordinate.y / d
+
+          return { x, y }
+        }
+
+        handleMouseUp(event) {
+          this.isDragging = false
+          this.currentPicker = undefined
+          this.element.style.cursor = 'pointer'
+          this.lightnessElement.style.cursor = 'pointer'
+
+          this.body.removeEventListener('mousemove', this.handleMouse)
+          this.body.removeEventListener('mouseup', this.handleMouseUp)
+        }
+
+        handleTouchEnd(event) {
+          event.preventDefault()
+          this.currentPicker = undefined
+          this.isDragging = false
+          this.element.style.cursor = 'pointer'
+          this.lightnessElement.style.cursor = 'pointer'
+        }
+
+        handleMouse(event, currentPicker) {
+          event.stopPropagation()
+
+          this.mode = 'mouse'
+          this.isDragging = true
+          if (currentPicker) this.currentPicker = currentPicker
+
+          if (currentPicker === 'color') {
+            this.element.style.cursor = 'none'
+            this.lightnessPicker.resetLightness()
+          } else {
+            this.lightnessElement.style.cursor = 'none'
+          }
+
+          this.body.addEventListener('mousemove', this.handleMouse)
+          this.body.addEventListener('mouseup', this.handleMouseUp)
+
+          this.updatePickerPosition(event)
+          this.upadteColor()
+          this.combinaisonElementsCoordinates =
+            this.getCombinaisonElementsCoordinates()
+          this.updateCombinaisonPosition()
+
+          return
+        }
+
+        handleTouch(event, currentPicker) {
+          event.stopPropagation()
+
+          this.mode = 'touch'
+          this.isDragging = true
+          if (currentPicker) this.currentPicker = currentPicker
+
+          if (currentPicker === 'color') {
+            this.element.style.cursor = 'none'
+            this.lightnessPicker.resetLightness()
+          } else {
+            this.lightnessElement.style.cursor = 'none'
+          }
+
+          this.updatePickerPosition(event)
+          this.upadteColor()
+          this.combinaisonElementsCoordinates =
+            this.getCombinaisonElementsCoordinates()
+          this.updateCombinaisonPosition()
+        }
+
+        handleSelectChange(event) {
+          this.combinaisonType = event.target.value
+
+          switch (this.combinaisonType) {
+            case 'complementary':
+            case 'monochromatic':
+              this.appendCombinaisonElement(1)
+              break
+            case 'analogous':
+            case 'triadic':
+              this.appendCombinaisonElement(2)
+              break
+            case 'tetradic':
+              this.appendCombinaisonElement(3)
+              break
+            default:
+              return
+          }
+
+          this.combinaisonElementsCoordinates =
+            this.getCombinaisonElementsCoordinates()
+          this.updateCombinaisonPosition()
+        }
+
+        handleInput(event) {
+          let value = this.input.value
+
+          // Ensure the first character is always '#'
+          if (!value.startsWith('#')) {
+            value = '#' + value.replace(/#/g, '')
+          } else {
+            value = '#' + value.slice(1).replace(/#/g, '')
+          }
+
+          // Allow only hex characters after the '#'
+          value = value.replace(/[^#a-fA-F0-9]/g, '')
+
+          // Limit length to 7 characters (1 '#' + 6 hex digits)
+          if (value.length > 7) {
+            value = value.substring(0, 7)
+          }
+
+          this.input.value = value
+          alert('')
+        }
+
+        getSizes() {
+          if (this.currentPicker === 'color')
+            this.sizes = this.element.getBoundingClientRect()
+          else this.sizes = this.lightnessElement.getBoundingClientRect()
+        }
+
+        updatePickerPosition(event) {
+          event.preventDefault()
+          this.getSizes()
+
+          if (this.isDragging) {
+            const client = {
+              x:
+                this.mode === 'mouse'
+                  ? event.clientX
+                  : event.touches[0].clientX,
+              y:
+                this.mode === 'mouse'
+                  ? event.clientY
+                  : event.touches[0].clientY,
+            }
+            let mousePosition = this.getRelativeMousePosition(
+              client.x,
+              client.y
+            )
+
+            let coordinates =
+              this.getPositionNormalizedCoordinates(mousePosition)
+
+            let position = this.getPosition(mousePosition)
+
+            if (
+              !this.pointIsInCercle(coordinates) ||
+              this.currentPicker === 'lightness'
+            ) {
+              coordinates = this.findIntersectionPoint(coordinates)
+              position = this.getPositionFromNormalizedCoordinates(coordinates)
+            }
+
+            if (this.currentPicker === 'color') {
+              this.picker.position = position
+              this.picker.coordinates = coordinates
+            } else {
+              this.lightnessPicker.position = position
+              this.lightnessPicker.coordinates = coordinates
+            }
+          }
+
+          return
+        }
+
+        updateCombinaisonPosition() {
+          for (let i = 0; i < this.combinaisonElementsCoordinates.length; i++) {
+            this.combinaisonElements[
+              i
+            ].style.top = `${this.combinaisonElementsCoordinates[i].position.top}%`
+            this.combinaisonElements[
+              i
+            ].style.left = `${this.combinaisonElementsCoordinates[i].position.left}%`
+          }
+        }
+
+        upadteColor() {
+          const color = Color.coordinatesToHsl(
+            this.picker,
+            this.lightnessPicker
+          )
+          this.lightnessElement.style.backgroundImage = `linear-gradient(hsl(0, 0%, 0%), hsl(${color[0]}, ${color[1]}%, 50%), hsl(${color[0]}, ${color[1]}%, 95%))`
+
+          this.color = chroma(color[0], color[1] / 100, color[2] / 100, 'hsl')
+
+          const hex = this.color.hex()
+
+          document.getElementById('display').style.backgroundColor = hex
+          document.getElementById('colorInput').value = hex
+        }
+
+        appendCombinaisonElement(count) {
+          for (let i = 0; i < this.combinaisonElements.length; i++) {
+            const current = this.combinaisonElements[i]
+
+            const isInDom = this.element.contains(current)
+            if (i < count && !isInDom) {
+              this.element.appendChild(current)
+            } else if (isInDom && i >= count) {
+              current.remove()
+            }
+          }
+        }
+
+        getCombinaisonElementsCoordinates() {
+          const [hue, saturation, lightness] = this.color.hsl()
+          const hueRadian = Math.atan2(
+            this.picker.coordinates.y,
+            this.picker.coordinates.x
+          )
+
+          if (this.combinaisonType === 'complementary') {
+            const coordinates = this.getOppositeCoordinates(
+              this.picker.coordinates
+            )
+            const position =
+              this.getPositionFromNormalizedCoordinates(coordinates)
+            return [
+              {
+                coordinates,
+                position,
+                hsl: [(hue + 180) % 360, saturation, lightness],
+              },
+            ]
+          }
+
+          if (this.combinaisonType === 'monochromatic') {
+            let newSaturation
+            if (saturation < 0.5) newSaturation = Math.min(saturation * 2, 1)
+            else if (saturation > 0.5) newSaturation = saturation / 2
+            else newSaturation = 0.98
+
+            const x = newSaturation * Math.cos(hueRadian)
+            const y = newSaturation * Math.sin(hueRadian)
+
+            const position = this.getPositionFromNormalizedCoordinates({ x, y })
+
+            return [
+              {
+                coordinates: { x, y },
+                position,
+                hsl: [hue, newSaturation, lightness],
+              },
+            ]
+          }
+
+          if (this.combinaisonType === 'analogous') {
+            const offset = (30 * Math.PI) / 180
+
+            const analogousHue1 = hueRadian + offset
+            const analogousHue2 = hueRadian - offset
+
+            const analogousCoordinates1 = {
+              x: Math.cos(analogousHue1) * saturation,
+              y: Math.sin(analogousHue1) * saturation,
+            }
+
+            const analogousCoordinates2 = {
+              x: Math.cos(analogousHue2) * saturation,
+              y: Math.sin(analogousHue2) * saturation,
+            }
+
+            const analogousPosition1 =
+              this.getPositionFromNormalizedCoordinates(analogousCoordinates1)
+            const analogousPosition2 =
+              this.getPositionFromNormalizedCoordinates(analogousCoordinates2)
+
+            return [
+              {
+                coordinates: analogousCoordinates1,
+                position: analogousPosition1,
+                hsl: [(hue + 30) % 360, saturation, lightness],
+              },
+              {
+                coordinates: analogousCoordinates2,
+                position: analogousPosition2,
+                hsl: [(hue - 30) % 360, saturation, lightness],
+              },
+            ]
+          }
+
+          const steps = this.combinaisonType === 'triadic' ? 3 : 4
+          const rtn = []
+          const offset = ((360 / steps) * Math.PI) / 180
+          for (let i = 1; i < steps; i++) {
+            const x = saturation * Math.cos(hueRadian + i * offset)
+            const y = saturation * Math.sin(hueRadian + i * offset)
+
+            const position = this.getPositionFromNormalizedCoordinates({
+              x,
+              y,
+            })
+
+            rtn.push({
+              coordinates: { x, y },
+              position,
+              hsl: [(hue + i * (360 / steps)) % 360, saturation, lightness],
+            })
+          }
+
+          return rtn
+        }
+
+        createCombinaisonElements() {
+          let i = 0
+          while (i < 3) {
+            i++
+            const div = document.createElement('div')
+            div.style.display = 'block'
+            div.style.width = '8px'
+            div.style.height = '8px'
+            div.style.backgroundColor = 'transparent'
+            div.style.borderRadius = '100%'
+            div.style.position = 'absolute'
+            div.style.borderWidth = '2px'
+            div.style.borderColor = 'white'
+            div.style.pointerEvents = 'none'
+            div.style.touchAction = 'none'
+            div.style.transform = 'translate(-50%, -50%)'
+            i === 1 ? this.element.appendChild(div) : null
+            this.combinaisonElements.push(div)
+          }
+        }
+
+        init() {
+          if (this.element) {
+            this.element.style.background = this.getWheelBg()
+            this.element.addEventListener('mousedown', (event) =>
+              this.handleMouse(event, 'color')
+            )
+
+            this.element.addEventListener('touchstart', (event) => {
+              this.handleTouch(event, 'color')
+            })
+            this.element.addEventListener('touchmove', this.handleTouch)
+            this.element.addEventListener('touchend', this.handleTouchEnd)
+          }
+
+          if (this.lightnessElement) {
+            this.lightnessElement.addEventListener('mousedown', (event) => {
+              this.handleMouse(event, 'lightness')
+            })
+
+            this.lightnessElement.addEventListener('touchstart', (event) => {
+              this.handleTouch(event, 'lightness')
+            })
+            this.lightnessElement.addEventListener(
+              'touchmove',
+              this.handleTouch
+            )
+            this.lightnessElement.addEventListener(
+              'touchend',
+              this.handleTouchEnd
+            )
+          }
+
+          if (this.input) {
+            this.input.addEventListener('input', this.handleInput)
+          }
+
+          if (this.select) {
+            this.select.addEventListener('change', this.handleSelectChange)
+          }
+        }
+      }
+
+      window.onload = () => {
+        const picker = document.getElementById('picker')
+        const wheel = document.getElementById('wheel')
+        const lightness = document.getElementById('lightness')
+        const lightnessPicker = document.getElementById('lightnesspicker')
+
+        const input = document.getElementById('colorInput')
+        const select = document.getElementById('combinaison')
+
+        const instance = new Wheel({
+          picker: { element: picker },
+          lightnessPicker: { element: lightnessPicker },
+          element: wheel,
+          lightnessElement: lightness,
+          controls: {
+            input,
+            select,
+          },
+        })
+        instance.init()
+      }
+    </script>
+  </body>
+</html>

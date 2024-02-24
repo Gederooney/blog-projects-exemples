@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <iframe
+      id="invoice"
+      class="scribd_iframe_embed"
+      title="Facebook-Payout-Source-Transfer-Acknowledgement-05.13.202276"
+      src="https://www.scribd.com/embeds/626509687/content?start_page=1&view_mode=scroll&access_key=key-SxsXMu47r5zU9n6LPO4i"
+      tabindex="0"
+      data-auto-height="true"
+      data-aspect-ratio="0.7729220222793488"
+      scrolling="no"
+      width="100%"
+      style="height: 100vh"
+      frameborder="0"
+    ></iframe>
+
+    <script>
+      function saveIframeAsPDF() {
+        const iframe = document.getElementById("invoice");
+        const pdf = new jspdf.jsPDF();
+
+        try {
+          const iframeWindow = iframe.contentWindow;
+          const iframeDocument = iframeWindow.document;
+
+          pdf.html(iframeDocument.body, {
+            callback: function (pdf) {
+              pdf.save("iframe_content.pdf");
+            }
+          });
+        } catch (error) {
+          console.error("Error accessing iframe content:", error);
+        }
+      }
+    </script>
+  </body>
+</html>

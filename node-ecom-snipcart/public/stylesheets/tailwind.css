@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html {
+  @apply overflow-hidden;
+}
+
+body {
+  @apply w-screen;
+  @apply h-screen;
+  @apply overflow-scroll;
+} */
+
+#cart-container {
+  @apply pointer-events-none;
+}
+
+#backdrop {
+  @apply opacity-0;
+  @apply transition-opacity;
+  @apply duration-500;
+  @apply ease-in-out;
+}
+
+#cart-container.open {
+  @apply pointer-events-auto;
+}
+
+#cart-container.open #backdrop {
+  @apply opacity-100;
+}
+
+#cart {
+  @apply translate-x-full;
+  @apply opacity-0;
+  transition: transform ease-in-out 0.5s, opacity ease-in-out 0.7s;
+}
+
+#cart-container.open #cart {
+  @apply translate-x-0;
+  @apply opacity-100;
+}

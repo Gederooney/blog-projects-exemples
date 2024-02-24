@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { clifford: '#da373d' },
+            fontFamily: { lexend: ["'Lexend'", 'sans-serif'] },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body>
+    <div class="h-screen max-w-[30rem] mx-auto flex flex-col">
+      <div class="flex gap-4 mx-auto w-72 aspect-video">
+        <h2 class="m-auto font-medium font-lexend leading-[1.2]">
+          Animation de bouton avec tailwindcss
+        </h2>
+        <button
+          class="relative p-2 m-auto before:content-[''] before:absolute before:inset-0 before:bg-black rounded-lg hover:before:rotate-[35deg] before:origin-bottom before:rounded-lg before:z-[-1] after:content-[''] after:absolute after:inset-0 after:z-[5] hover:after:border hover:after:bg-black/15 h-14 w-14 hover:after:backdrop-blur-[5.5px] hover:after:border-white/20 after:rounded-lg before:duration-300 before:transition-transform before:ease-in-out after::transition-transform after:ease-in-out after:duration-300">
+          <span
+            class="block h-full text-white aspect-square relative z-[10] p-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-full h-full fill-current"
+              viewBox="0 0 448 512">
+              <path
+                d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="flex-1 p-4">
+        <img src="./code.png" class="" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

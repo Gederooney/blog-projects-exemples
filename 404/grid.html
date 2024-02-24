@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            container: {
+              center: true,
+              padding: '1rem',
+            },
+            colors: {},
+          },
+        },
+      }
+    </script>
+  </head>
+  <body>
+    <section class="grid w-screen h-screen md:grid-cols-2 md:grid-rows-1">
+      <div class="relative z-10 grid">
+        <div class="px-4 m-auto">
+          <h1
+            class="block font-black text-center md:text-gray-950 text-gray-50 text-7xl sm:text-9xl">
+            404
+          </h1>
+          <p class="max-w-xl px-4 text-center md:text-gray-950 text-gray-50">
+            On dirait que vous êtes perdus. Cliquez
+            <a class="underline" href="/#">ici</a> pour retourner en lieu sûr.
+          </p>
+          <div class="flex items-center justify-center gap-4 my-6">
+            <button class="px-4 py-3 bg-gray-300 rounded-md">
+              Signalez un probleme
+            </button>
+            <a href="/#" class="flex items-center gap-2 text-blue-600">
+              <span class="inline-block w-4 h-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-full h-full fill-current"
+                  viewBox="0 0 512 512">
+                  <path
+                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z" />
+                </svg>
+              </span>
+              <span>retour</span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="absolute text-xs text-center -translate-x-1/2 bottom-4 left-1/2">
+          <ul class="flex items-center gap-3">
+            <li>Politiques</li>
+            <li>Conditions</li>
+            <li>À-propos</li>
+          </ul>
+          <span> &copy; 2024 tailflows </span>
+        </div>
+      </div>
+      <div
+        class="absolute z-0 w-full h-full bg-cover md:relative"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1511282419954-ef8b90aec22b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        "></div>
+    </section>
+  </body>
+</html>

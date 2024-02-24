@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      <% if (title) { %> <%= title %> <% } else { %> Mes Bons Prix <% } %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('./partials/header.html') %>
+    <main>
+      <div class="">
+        <div class="pt-6">
+          <nav aria-label="Breadcrumb">
+            <ol
+              role="list"
+              class="flex items-center max-w-2xl px-4 mx-auto space-x-2 sm:px-6 lg:max-w-7xl lg:px-8"
+            >
+              <li>
+                <div class="flex items-center">
+                  <a
+                    href="<%= `/marque/${brandName}` %>"
+                    class="mr-2 text-sm font-medium text-black"
+                  >
+                    <%= brandName %>
+                  </a>
+                  <svg
+                    width="16"
+                    height="20"
+                    viewBox="0 0 16 20"
+                    fill="details[0]"
+                    aria-hidden="true"
+                    class="w-4 h-5 text-gray-300"
+                  >
+                    <path
+                      d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z"
+                    />
+                  </svg>
+                </div>
+              </li>
+
+              <li class="text-sm">
+                <span
+                  aria-current="page"
+                  class="font-medium text-gray-500 hover:text-gray-600"
+                >
+                  <%= product.name.toLowerCase().replaceAll(' ', '-') %>
+                </span>
+              </li>
+            </ol>
+          </nav>
+          <div
+            class="relative flex flex-col w-full px-5 mx-auto my-8 md:px-12 lg:px-20 max-w-7xl lg:flex-row lg:gap-8"
+          >
+          <% details.map((detail, index) => { %>
+            <div class="<%=`grid w-2/3 grid-cols-2 lg:gap-4 ${(index !== 0) ? 'hidden' : 'active'} images` %>" data-color="<%= detail.id %>">
+              <% detail.images.map((image) => { %>
+                <figure >
+                <img class="w-full" src="<%= image %>" alt="" />
+                </figure>
+              <% }) %>
+            </div>
+        <% }) %>
+		  <div class="sticky w-1/3 h-full py-4 border-r top-2 border-y">
+            <div class="w-full ">
+              <div class="lg:col-span-2 lg:pr-8">
+                <h1 class="text-xl font-bold tracking-tight text-black uppercase">
+                  <%= product.name %>
+                </h1>
+              </div>
+              <div class="max-w-2xl pt-5 pb-16 mx-auto">
+                <!-- Options  -->
+                <div class="mt-4 lg:row-span-3 lg:mt-0">
+                  <h2 class="sr-only">Details du produit</h2>
+                  <div class="">
+                    <h3 class="mt-2 text-sm font-medium text-geray-900">
+                      Description
+                    </h3>
+                    <p class="mt-2 text-sm font-light ">
+                      <%= details[0].description %>
+                    </p>
+                  </div>
+                  <div class="mt-10 ">
+                    <h3 class="mt-2 text-sm font-medium text-geray-900">
+                      Prix
+                    </h3>
+                    <div class="flex flex-row items-end justify-start gap-4 mt-2">
+                      <span class="text-xl font-bold leading-none text-red-500">
+                        <%= details[0].sizes[0].priceToDisplay %>
+                      </span>
+                      <span class="text-xs font-bold text-gray-400 line-through">
+                        <%= details[0].sizes[0].oldPriceToDisplay %>
+                      </span>
+                    </div>
+                    <span class="text-xs font-light text-gray-400">
+                      <%= details[0].displayDiscountPercentage %>% de réduction
+                    </span>
+                  </div>
+
+                  <form class="mt-10">
+                    <!-- Colors -->
+                    <div>
+                      <h3 class="text-sm font-medium text-geray-900">
+                        Couleurs disponibles
+                      </h3>
+
+                      <fieldset class="mt-2">
+                        <legend class="sr-only">Choisir une couleur</legend>
+                        <script type="text/javascript">
+                          const setColor = (e) => {
+                            e.preventDefault();
+                            const imagesWrapper = document.querySelector('.images.active');
+                            const toSet = e.target.dataset.color;
+                            if (imagesWrapper.dataset.color !== toSet) {
+                              imagesWrapper.classList.remove('active');
+                              imagesWrapper.classList.add('hidden');
+                              document.querySelector(`.images[data-color="${toSet}"]`).classList.remove('hidden');
+                              document.querySelector(`.images[data-color="${toSet}"]`).classList.add('active');
+                            }
+                          }
+                        </script>
+                        <div class="flex items-center space-x-3">
+                          <% details.map((detail) => { %>
+                            <button
+                              onclick="setColor(event)"
+                              data-color="<%= detail.id %>"
+                              class="w-4 h-4 rounded-full"
+                              style="<%= `background-color: ${detail.hexCode}` %>"
+                              title="<%- detail.name %>"
+                            >
+                              <span class="sr-only">
+								<%= detail.name %>
+							  </span>
+                            </button>
+                          <% }) %>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="mt-4">
+                      <h3 class="text-sm font-medium text-black">
+                        Tailles disponibles
+                      </h3>
+
+                      <fieldset class="mt-4">
+                        <legend class="sr-only">Choisir une taille</legend>
+                        <div class="flex items-center space-x-3">
+                          <% details[0].sizes.map((size) => { %>
+                            <button
+                              class="rounded-full disabled:text-gray-400"
+                              <%= size.availability === 'out_of_stock' ? 'disabled' : '' %>
+                              title="<%- size.availability === 'out_of_stock' ? 'Indisponible' : 'Disponible' %>"
+                            >
+                              <%= size.name %>
+                            </button>
+                          <% }) %>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <a
+                      href="<%= product.url %>"
+                      class="inline-block px-12 py-4 mt-8 border cursor-pointer hover:text-white hover:bg-black group"
+					  target="_blank"
+                    >
+                      Acheter sur le site de
+                      <span class="font-bold group-hover:text-white">
+                        <%= brandName %>
+                      </span>
+                    </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+		</div>
+        </div>
+      </div>
+      <%- include('./partials/cart.html') %>
+    </main>
+    <%- include('./partials/footer.html')%>
+  </body>
+</html>
